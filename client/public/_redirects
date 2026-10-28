@@ -1,0 +1,32 @@
+# Host-specific redirect candidate; verify production host support before launch.
+# /about is intentionally reserved for the author biography.
+/briefs /lifeecode/briefs/ 301
+/briefs/ /lifeecode/briefs/ 301
+/briefs/1 /lifeecode/briefs/1/ 301
+/briefs/1/ /lifeecode/briefs/1/ 301
+/briefs/2 /lifeecode/briefs/2/ 301
+/briefs/2/ /lifeecode/briefs/2/ 301
+/briefs/3 /lifeecode/briefs/3/ 301
+/briefs/3/ /lifeecode/briefs/3/ 301
+/briefs/5 /lifeecode/briefs/5/ 301
+/briefs/5/ /lifeecode/briefs/5/ 301
+/briefs/6 /lifeecode/briefs/6/ 301
+/briefs/6/ /lifeecode/briefs/6/ 301
+/briefs/7 /lifeecode/briefs/7/ 301
+/briefs/7/ /lifeecode/briefs/7/ 301
+/briefs/8 /lifeecode/briefs/8/ 301
+/briefs/8/ /lifeecode/briefs/8/ 301
+/briefs/9 /lifeecode/briefs/9/ 301
+/briefs/9/ /lifeecode/briefs/9/ 301
+/briefs/11 /lifeecode/briefs/11/ 301
+/briefs/11/ /lifeecode/briefs/11/ 301
+/podcast /lifeecode/podcast/ 301
+/podcast/ /lifeecode/podcast/ 301
+/hindi /lifeecode/hindi/ 301
+/hindi/ /lifeecode/hindi/ 301
+/hindi/briefs/8 /lifeecode/hindi/briefs/8/ 301
+/hindi/briefs/8/ /lifeecode/hindi/briefs/8/ 301
+/hindi/briefs/9 /lifeecode/hindi/briefs/9/ 301
+/hindi/briefs/9/ /lifeecode/hindi/briefs/9/ 301
+/hindi/briefs/11 /lifeecode/hindi/briefs/11/ 301
+/hindi/briefs/11/ /lifeecode/hindi/briefs/11/ 301

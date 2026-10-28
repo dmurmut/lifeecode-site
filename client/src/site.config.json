@@ -1,0 +1,5 @@
+{
+  "productionHost": "devmmurmu.com",
+  "indexingEnabled": true,
+  "draftPaths": ["/newsletter/", "/privacy/"]
+}

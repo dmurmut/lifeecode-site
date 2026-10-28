@@ -1,10 +1,144 @@
-/* Original LifeeCode visual fidelity: compact white masthead, linked Hindi/Hinglish announcement pointer, and Episode 11 podcast-first footer. */
-import { HeartPulse, Linkedin, Menu, Play, Podcast, Twitter } from "lucide-react";
-import { Link, useLocation } from "wouter";
-import type { ReactNode } from "react";
+import { type ReactNode, useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
+import { useLocation } from "wouter";
 
-const navItems = [{ label: "Home", href: "/" }, { label: "Weekly Briefs", href: "/briefs" }, { label: "Podcast", href: "/podcast" }, { label: "🇮🇳 हिंदी", href: "/hindi" }, { label: "About", href: "/about" }];
+const navigation = [
+  { label: "Home", href: "/" },
+  { label: "Books", href: "/books/" },
+  { label: "About", href: "/about/" },
+  { label: "LifeeCode", href: "/lifeecode/" },
+];
 
-function Brand() { return <Link href="/" className="flex items-center gap-2" aria-label="LifeeCode home"><span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-[#00b8db] via-[#00c950] to-[#fc3c44] text-white shadow-sm"><HeartPulse size={15} strokeWidth={2.8} /></span><span className="leading-none"><strong className="font-[family-name:var(--font-display)] text-[1.35rem] font-bold tracking-[-.065em] text-[#1a1a19]">LifeeCode</strong><small className="ml-1.5 font-semibold text-[.57rem] tracking-[.04em] text-[#7b7b77]">by Deveendra Murmu</small></span></Link>; }
+function isActivePath(location: string, href: string) {
+  if (href === "/") return location === "/";
+  return location.startsWith(href.replace(/\/$/, ""));
+}
 
-export default function SiteLayout({ children }: { children: ReactNode }) { const [location] = useLocation(); return <div className="page-shell"><header className="border-b border-slate-200/80 bg-white"><div className="site-frame flex h-[58px] items-center justify-between gap-5"><Brand /><nav className="nav-links flex items-center gap-6" aria-label="Primary navigation">{navItems.map((item) => <Link key={item.href} href={item.href} className="nav-link" aria-current={item.href === "/" ? (location === "/" ? "page" : undefined) : (location === item.href || location.startsWith(`${item.href}/`) ? "page" : undefined)}>{item.label}</Link>)}</nav><a href="https://open.spotify.com/show/4iQ2BZmKzf0pnjXvzNAOax" target="_blank" rel="noreferrer" className="btn-primary hidden min-h-[34px] rounded-md px-3 text-[.7rem] sm:inline-flex">Listen to podcast <Podcast size={13} /></a><button className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-slate-200 sm:hidden" aria-label="Open menu"><Menu size={18} /></button></div></header><div className="bg-gradient-to-r from-[#f99c00] via-[#fc3c44] to-[#8d54ff] text-white"><div className="site-frame flex min-h-9 items-center justify-center gap-3 px-3 py-1.5 text-center text-[.72rem] font-semibold"><span>🇮🇳 LifeeCode हिंदी is now live — Health tech explained in Hindi for Indian listeners.</span><Link href="/hindi" className="hidden whitespace-nowrap underline decoration-white/80 underline-offset-3 sm:inline">Explore LifeeCode हिंदी →</Link></div></div>{children}<footer className="mt-0 border-t border-[#dfe7ed] bg-white"><div className="site-frame grid gap-10 py-12 md:grid-cols-[1.4fr_.7fr_.8fr]"><div><Brand /><p className="mt-4 max-w-sm text-[.82rem] leading-6 text-slate-500">Evidence-based, privacy-first health technology analysis — every week. Speed of AI, Soul of Deveendra Murmu.</p><div className="mt-5 flex gap-2.5">{[["YouTube archive","https://www.youtube.com/@LifeeCode",Play],["Podcast","https://open.spotify.com/show/4iQ2BZmKzf0pnjXvzNAOax",Podcast],["X","https://x.com/DeveendraMurmu",Twitter],["LinkedIn","https://www.linkedin.com/in/deveendramurmu/",Linkedin]].map(([label,href,Icon]) => { const I = Icon as typeof Play; return <a key={label as string} href={href as string} target="_blank" rel="noreferrer" aria-label={label as string} className="flex h-8 w-8 items-center justify-center rounded-md border border-slate-200 text-slate-500 transition hover:border-[#00a9c7] hover:text-[#00a9c7]"><I size={14} /></a>; })}</div></div><div><p className="text-[.7rem] font-bold uppercase tracking-[.08em] text-slate-700">Explore</p><div className="mt-4 flex flex-col gap-2.5 text-[.8rem] text-slate-500">{navItems.slice(1).map((item) => <Link key={item.href} href={item.href} className="hover:text-[#00a9c7]">{item.label}</Link>)}</div></div><div><p className="text-[.7rem] font-bold uppercase tracking-[.08em] text-slate-700">Listen</p><div className="mt-4 flex flex-col gap-2.5 text-[.8rem] text-slate-500"><a target="_blank" rel="noreferrer" href="https://open.spotify.com/episode/6PxTqKJu3d5asEWAcnVSMZ?si=tC2ssFF_T4y8NkfDRGnkJA" className="hover:text-[#00a9c7]">English podcast — Ep. 11</a><Link href="/hindi" className="hover:text-[#00a9c7]">Hindi / Hinglish audio</Link><span className="text-slate-400">YouTube deep-dives return soon</span></div></div></div><div className="site-frame border-t border-slate-100 py-4 text-[.67rem] text-slate-400">© 2026 LifeeCode by Deveendra Murmu. All rights reserved.</div></footer></div>; }
+function Header() {
+  const [open, setOpen] = useState(false);
+  const [location] = useLocation();
+
+  useEffect(() => {
+    setOpen(false);
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [location]);
+
+  return (
+    <header className="sticky top-0 z-50 border-b border-[#302b31]/20 bg-[#fbfbfa]">
+      <div className="container flex min-h-[78px] items-center justify-between gap-6 py-2">
+        <a
+          className="flex items-center gap-3 text-[#302b31] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7e334e] focus-visible:ring-offset-4"
+          href="/"
+          aria-label="Deveendra Murmu home"
+        >
+          <span aria-hidden="true" className="hidden border-r border-[#302b31]/50 pr-3 font-mono text-xs text-[#7e334e] sm:block">DM /</span>
+          <span className="font-serif text-[1.75rem] font-normal tracking-[-0.02em] sm:text-[1.95rem]">Deveendra Murmu</span>
+        </a>
+
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">
+          {navigation.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              aria-current={isActivePath(location, item.href) ? "page" : undefined}
+              className={`border-b border-transparent pb-1 text-[0.7rem] font-semibold uppercase tracking-[0.08em] transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7e334e] focus-visible:ring-offset-4 ${
+                isActivePath(location, item.href)
+                  ? "border-[#7e334e] text-[#7e334e]"
+                  : "text-[#51484b] hover:border-[#302b31] hover:text-[#302b31]"
+              }`}
+            >
+              {item.label}
+            </a>
+          ))}
+          <a
+            href="/newsletter/"
+            aria-current={isActivePath(location, "/newsletter/") ? "page" : undefined}
+            className="border border-[#302b31] bg-[#302b31] px-5 py-2.5 text-[0.7rem] font-semibold uppercase tracking-[0.08em] text-[#fbfbfa] transition-colors duration-200 hover:bg-[#7e334e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7e334e] focus-visible:ring-offset-4"
+          >
+            Newsletter
+          </a>
+        </nav>
+
+        <button
+          type="button"
+          className="grid h-11 w-11 place-items-center border border-[#302b31]/50 text-[#302b31] transition-colors hover:bg-[#e2d4bc] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7e334e] lg:hidden"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          aria-controls="mobile-menu"
+          onClick={() => setOpen((value) => !value)}
+        >
+          {open ? <X size={20} /> : <Menu size={20} />}
+        </button>
+      </div>
+
+      {open && (
+        <nav
+          id="mobile-menu"
+          className="border-t border-[#302b31]/10 bg-[#fbfbfa] px-4 py-5 shadow-[0_20px_30px_-24px_rgba(8,35,32,0.45)] lg:hidden"
+          aria-label="Mobile navigation"
+        >
+          <div className="mx-auto flex max-w-md flex-col">
+            {navigation.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                aria-current={isActivePath(location, item.href) ? "page" : undefined}
+                className="border-b border-[#302b31]/10 py-3.5 text-base font-semibold text-[#302b31]"
+              >
+                {item.label}
+              </a>
+            ))}
+            <a href="/newsletter/" className="mt-5 bg-[#302b31] px-5 py-3 text-center font-mono text-sm uppercase tracking-[0.1em] text-[#fff7e8]">
+              Newsletter
+            </a>
+          </div>
+        </nav>
+      )}
+    </header>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="bg-[#2d262f] py-14 text-[#e2d5c3]">
+      <div className="container">
+        <div className="grid gap-10 border-b border-[#e2d5c3]/30 pb-12 lg:grid-cols-[1.3fr_0.7fr] lg:items-end">
+          <div>
+            <p className="folio-label text-[#f0ce8a]">Colophon / nonfiction & notes</p>
+            <p className="mt-5 font-serif text-5xl font-normal leading-none text-[#fbfbfa]">Deveendra<br />Murmu</p>
+            <p className="mt-5 max-w-md text-base leading-relaxed text-[#c7b6a8]">
+              Nonfiction about technology, behavior, judgment, influence, and the choices through which we build our lives.
+            </p>
+          </div>
+          <nav className="grid grid-cols-2 gap-x-8 gap-y-4 font-mono text-xs uppercase tracking-[0.08em] lg:justify-self-end" aria-label="Footer navigation">
+            <a href="/books/" className="hover:text-white">01 / Books</a>
+            <a href="/about/" className="hover:text-white">02 / About</a>
+            <a href="/newsletter/" className="hover:text-white">03 / Newsletter</a>
+            <a href="/lifeecode/" className="hover:text-white">04 / LifeeCode</a>
+            <a href="/privacy/" className="hover:text-white">05 / Privacy</a>
+          </nav>
+        </div>
+
+        <div className="grid gap-5 pt-7 font-mono text-xs text-[#c7b6a8] md:grid-cols-[1fr_auto] md:items-center">
+          <p>© 2026 Deveendra Murmu. All rights reserved.</p>
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            <a href="https://www.linkedin.com/in/deveendramurmu/" target="_blank" rel="noreferrer" className="hover:text-white">LinkedIn</a>
+            <a href="https://x.com/DeveendraMurmu" target="_blank" rel="noreferrer" className="hover:text-white">X</a>
+            <a href="https://www.youtube.com/@LifeeCode" target="_blank" rel="noreferrer" className="hover:text-white">LifeeCode YouTube</a>
+            <a href="mailto:hello@devmmurmu.com" className="hover:text-white">Email</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+export default function SiteLayout({ children, variant = "author" }: { children: ReactNode; variant?: "author" | "lifeecode" }) {
+  return (
+    <div className="min-h-screen bg-[#fbfbfa] text-[#302b31]">
+      <Header />
+      <main className={variant === "lifeecode" ? "page-lifeecode" : "page-author"}>{children}</main>
+      <Footer />
+    </div>
+  );
+}

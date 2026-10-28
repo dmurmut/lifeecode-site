@@ -1,8 +1,186 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "vite",
+  "framework": null,
   "installCommand": "pnpm install --frozen-lockfile",
-  "buildCommand": "pnpm exec vite build",
+  "buildCommand": "pnpm exec vite build && node scripts/prepare-static.mjs",
   "outputDirectory": "dist/public",
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/briefs",
+      "destination": "/lifeecode/briefs/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/",
+      "destination": "/lifeecode/briefs/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/1",
+      "destination": "/lifeecode/briefs/1/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/1/",
+      "destination": "/lifeecode/briefs/1/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/2",
+      "destination": "/lifeecode/briefs/2/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/2/",
+      "destination": "/lifeecode/briefs/2/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/3",
+      "destination": "/lifeecode/briefs/3/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/3/",
+      "destination": "/lifeecode/briefs/3/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/5",
+      "destination": "/lifeecode/briefs/5/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/5/",
+      "destination": "/lifeecode/briefs/5/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/6",
+      "destination": "/lifeecode/briefs/6/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/6/",
+      "destination": "/lifeecode/briefs/6/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/7",
+      "destination": "/lifeecode/briefs/7/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/7/",
+      "destination": "/lifeecode/briefs/7/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/8",
+      "destination": "/lifeecode/briefs/8/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/8/",
+      "destination": "/lifeecode/briefs/8/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/9",
+      "destination": "/lifeecode/briefs/9/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/9/",
+      "destination": "/lifeecode/briefs/9/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/11",
+      "destination": "/lifeecode/briefs/11/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/11/",
+      "destination": "/lifeecode/briefs/11/",
+      "permanent": true
+    },
+    {
+      "source": "/podcast",
+      "destination": "/lifeecode/podcast/",
+      "permanent": true
+    },
+    {
+      "source": "/podcast/",
+      "destination": "/lifeecode/podcast/",
+      "permanent": true
+    },
+    {
+      "source": "/hindi",
+      "destination": "/lifeecode/hindi/",
+      "permanent": true
+    },
+    {
+      "source": "/hindi/",
+      "destination": "/lifeecode/hindi/",
+      "permanent": true
+    },
+    {
+      "source": "/hindi/briefs/8",
+      "destination": "/lifeecode/hindi/briefs/8/",
+      "permanent": true
+    },
+    {
+      "source": "/hindi/briefs/8/",
+      "destination": "/lifeecode/hindi/briefs/8/",
+      "permanent": true
+    },
+    {
+      "source": "/hindi/briefs/9",
+      "destination": "/lifeecode/hindi/briefs/9/",
+      "permanent": true
+    },
+    {
+      "source": "/hindi/briefs/9/",
+      "destination": "/lifeecode/hindi/briefs/9/",
+      "permanent": true
+    },
+    {
+      "source": "/hindi/briefs/11",
+      "destination": "/lifeecode/hindi/briefs/11/",
+      "permanent": true
+    },
+    {
+      "source": "/hindi/briefs/11/",
+      "destination": "/lifeecode/hindi/briefs/11/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "(?<sub>.*)\\.vercel\\.app"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ]
 }

@@ -1,0 +1,315 @@
+/* Scoped publication styles: do not alter the approved author pages. */
+@layer components {
+  .lc-shell {
+    --font-display: "Instrument Serif", Georgia, serif;
+    --font-body: "Inter", Arial, sans-serif;
+    background: linear-gradient(#fbfdff, #f5fbfc 47%, #fbf8ff);
+    color: #1a1a19;
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.55;
+    overflow: clip;
+  }
+  .lc-shell .page-lifeecode {
+    background: transparent;
+  }
+  .lc-frame {
+    width: min(1120px, calc(100% - 40px));
+    margin-inline: auto;
+  }
+  .lc-shell .lc-eyebrow {
+    color: #6d36cc;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    display: inline-flex;
+  }
+  .lc-eyebrow::before {
+    content: "";
+    background: #eadcff;
+    border-radius: 4px;
+    flex: none;
+    width: 8px;
+    height: 8px;
+    box-shadow: 0 0 0 4px #8d54ff17;
+  }
+  .lc-hero-heading {
+    font-family: var(--font-display);
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(3.25rem, 7vw, 6rem);
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    color: #1a1a19;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+  .lc-section-heading {
+    max-width: 720px;
+    font-family: var(--font-display);
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  .lc-card-heading {
+    font-family: var(--font-display);
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .lc-lead-copy {
+    color: #667085;
+    max-width: 620px;
+    font-size: 1rem;
+    line-height: 1.72;
+  }
+  .lc-soft-card {
+    background: #ffffffe0;
+    border: 1px solid #e1e6f2;
+    border-radius: 1rem;
+    box-shadow: 0 10px 28px #29415a0d;
+  }
+
+  /* Same family, casing and restraint as the author interface; teal remains LifeeCode's accent. */
+  .lc-button-primary,
+  .lc-button-quiet {
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 0.74rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    line-height: 1.4;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 12px 20px;
+    border: 1px solid;
+    border-radius: 0;
+    transition:
+      transform 160ms cubic-bezier(0.23, 1, 0.32, 1),
+      background-color 160ms;
+  }
+  .lc-button-primary {
+    background: #00a9c7;
+    border-color: #00a9c7;
+    color: #07343c;
+  }
+  .lc-button-primary:hover {
+    background: #36c0d6;
+    border-color: #36c0d6;
+    transform: translateY(-2px);
+  }
+  .lc-button-quiet {
+    background: #ffffff;
+    border-color: #cbd5df;
+    color: #4b5563;
+  }
+  .lc-button-quiet:hover {
+    background: #f2fcff;
+    border-color: #7daeb7;
+    transform: translateY(-2px);
+  }
+  .lc-button-primary:active,
+  .lc-button-quiet:active {
+    transform: scale(0.97);
+  }
+  .lc-button-primary:focus-visible,
+  .lc-button-quiet:focus-visible,
+  .lc-nav-link:focus-visible,
+  .lc-brand:focus-visible,
+  .lc-menu-toggle:focus-visible,
+  .lc-shell main a:focus-visible,
+  .lc-shell footer a:focus-visible {
+    outline: 2px solid #087586;
+    outline-offset: 4px;
+  }
+  .lc-shell .lc-card-link {
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 0.74rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .lc-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: #fbfbfa;
+    border-bottom: 1px solid #302b3133;
+  }
+  .lc-header-row {
+    display: flex;
+    min-height: 78px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-block: 8px;
+  }
+  .lc-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .lc-brand-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, #00b8db, #00c950, #fc3c44);
+    border-radius: 50%;
+    color: white;
+    box-shadow: 0 1px 3px #00000015;
+  }
+  .lc-brand-name {
+    line-height: 1;
+  }
+  .lc-original-wordmark {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: -0.065em;
+    color: #1a1a19;
+  }
+  .lc-brand-name small {
+    display: block;
+    margin-top: 5px;
+    font-family: "Manrope", Arial, sans-serif;
+    font-weight: 600;
+    font-size: 0.57rem;
+    letter-spacing: 0.04em;
+    color: #7b7b77;
+  }
+  .lc-desktop-nav {
+    display: none;
+    align-items: center;
+    gap: 24px;
+  }
+  .lc-nav-link {
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #51484b;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 4px;
+    transition: color 160ms;
+  }
+  .lc-nav-link:hover,
+  .lc-nav-link[aria-current="page"] {
+    color: #087586;
+    border-bottom-color: #087586;
+  }
+  .lc-author-link {
+    padding-right: 18px;
+    border-right: 1px solid #302b3133;
+  }
+  .lc-menu-toggle {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    border: 1px solid #302b3180;
+    color: #302b31;
+    background: transparent;
+  }
+  .lc-mobile-nav {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+  .lc-mobile-nav .lc-nav-link {
+    padding-block: 14px;
+    border-bottom: 1px solid #302b311a;
+    font-size: 0.85rem;
+  }
+  .lc-mobile-nav .lc-button-primary {
+    margin-top: 16px;
+  }
+  .lc-announcement {
+    background: linear-gradient(to right, #f99c00, #fc3c44, #8d54ff);
+    color: white;
+  }
+
+  @media (max-width: 760px) {
+    .lc-frame {
+      width: min(calc(100% - 28px), 1120px);
+    }
+    .lc-section-heading {
+      font-size: clamp(2.25rem, 10vw, 3.4rem);
+    }
+  }
+  @media (min-width: 1100px) {
+    .lc-desktop-nav {
+      display: flex;
+    }
+    .lc-menu-toggle,
+    .lc-mobile-nav {
+      display: none;
+    }
+  }
+}
+
+/* Remaining publication routes: original reading utilities stay intact. */
+@layer components {
+  .lc-preserved-content .lc-preserved-title {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: -0.015em;
+    line-height: 1.12;
+    overflow-wrap: break-word;
+  }
+  .lc-preserved-content h1.lc-preserved-title {
+    line-height: 1.05;
+  }
+  .lc-preserved-content h1 em {
+    font-style: normal;
+  }
+  .lc-preserved-content .lc-text-link {
+    color: #0d8095;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    transition:
+      gap 180ms,
+      color 180ms;
+  }
+  .lc-preserved-content .lc-text-link:hover {
+    gap: 11px;
+    color: #075d6e;
+  }
+  .lc-preserved-content .lc-button-hindi {
+    background: #6d36cc;
+    border-color: #6d36cc;
+    color: #fff;
+  }
+  .lc-preserved-content .lc-button-hindi:hover {
+    background: #592ba9;
+    border-color: #592ba9;
+  }
+  .lc-preserved-content .lc-frame {
+    min-width: 0;
+  }
+  .lc-preserved-content nav a {
+    overflow-wrap: anywhere;
+  }
+  .lc-preserved-content [lang="hi"],
+  .lc-preserved-content[lang="hi"] {
+    overflow-wrap: break-word;
+  }
+}

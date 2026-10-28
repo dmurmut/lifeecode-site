@@ -1,0 +1,158 @@
+[
+  {
+    "path": "/lifeecode/briefs/",
+    "legacyPath": "/briefs",
+    "module": "briefs",
+    "title": "Health technology, filtered for what changes your future. | LifeeCode",
+    "description": "Every archived brief follows five developments that matter—not merely five that made noise. We look for impact, evidence, privacy implications, and the human decision underneath the headline.",
+    "language": "en",
+    "article": false
+  },
+  {
+    "path": "/lifeecode/briefs/1/",
+    "legacyPath": "/briefs/1",
+    "module": "briefs-1",
+    "title": "FDA Eases Regulatory Hurdles for Wearables — But Experts Warn of a Hidden Risk | LifeeCode",
+    "description": "This week’s signal: The FDA just quietly changed the rules for millions of health wearables — and most consumers have no idea. From loosened regulatory oversight on your smartwatch and sleep tracker, ",
+    "language": "en",
+    "article": true,
+    "issue": 1
+  },
+  {
+    "path": "/lifeecode/briefs/2/",
+    "legacyPath": "/briefs/2",
+    "module": "briefs-2",
+    "title": "Microsoft Launches Copilot Health, Integrating Wearables and Medical Records | LifeeCode",
+    "description": "This week’s signal: Microsoft just launched an AI that reads your wearables and your medical records at the same time — and the U.S. government just committed $144 million to fund the first human tria",
+    "language": "en",
+    "article": true,
+    "issue": 2
+  },
+  {
+    "path": "/lifeecode/briefs/3/",
+    "legacyPath": "/briefs/3",
+    "module": "briefs-3",
+    "title": "Your Apple Watch Can Now Predict a Heart Failure Hospitalisation 21 Days Early | LifeeCode",
+    "description": "This week’s signal: Your Apple Watch can now predict a heart failure hospitalisation 21 days before it happens — and that's just the beginning. This week: Apple Watch enters a 500-patient Parkinson's ",
+    "language": "en",
+    "article": true,
+    "issue": 3
+  },
+  {
+    "path": "/lifeecode/briefs/5/",
+    "legacyPath": "/briefs/5",
+    "module": "briefs-5",
+    "title": "Google and the U.S. Government Just Merged Your Medical Records with Your Fitbit | LifeeCode",
+    "description": "This week’s signal: When the federal government partners with the world's largest data company to put your hospital records inside a consumer fitness app, the question is no longer whether your health",
+    "language": "en",
+    "article": true,
+    "issue": 5
+  },
+  {
+    "path": "/lifeecode/briefs/6/",
+    "legacyPath": "/briefs/6",
+    "module": "briefs-6",
+    "title": "Meta Puts a Health-Capable AI Inside WhatsApp, Instagram, and Facebook — and Asked Users for Their Lab Results | LifeeCode",
+    "description": "This week’s signal: Meta just put a health AI inside WhatsApp, Instagram, and Facebook — and it asked users for their raw lab results. This week: Meta's Muse Spark expands across its entire consumer e",
+    "language": "en",
+    "article": true,
+    "issue": 6
+  },
+  {
+    "path": "/lifeecode/briefs/7/",
+    "legacyPath": "/briefs/7",
+    "module": "briefs-7",
+    "title": "Wearables May Spot Parkinson's Progression Before the Clinic Does | LifeeCode",
+    "description": "This week’s signal: This week's five stories share a common thread: wearables are moving from fitness companions to clinical instruments. A new study shows wearables can track Parkinson's disease prog",
+    "language": "en",
+    "article": true,
+    "issue": 7
+  },
+  {
+    "path": "/lifeecode/briefs/8/",
+    "legacyPath": "/briefs/8",
+    "module": "briefs-8",
+    "title": "The Same Wearable Can Face Opposite Rules — and That Should Worry You | LifeeCode",
+    "description": "This week’s signal: The same wearable can face opposite rules depending on the claim on the box. This week, LifeeCode looks at the widening line between wellness trackers and clinical devices, why tru",
+    "language": "en",
+    "article": true,
+    "issue": 8
+  },
+  {
+    "path": "/lifeecode/briefs/9/",
+    "legacyPath": "/briefs/9",
+    "module": "briefs-9",
+    "title": "The GAO Just Explained Why Wearables Still Struggle to Become Real Clinical Tools | LifeeCode",
+    "description": "This week’s signal: Wearables have already proved that people will track themselves. The next test is whether their data can improve care without overwhelming patients, clinicians, or privacy safeguar",
+    "language": "en",
+    "article": true,
+    "issue": 9
+  },
+  {
+    "path": "/lifeecode/briefs/11/",
+    "legacyPath": "/briefs/11",
+    "module": "briefs-11",
+    "title": "Your Wearable Score Is Not a Clinical Outcome — Until It Proves It Matters | LifeeCode",
+    "description": "This week’s signal: Health technology is moving beyond the era of counting everything. The next era is about measuring what matters. This week, LifeeCode examines the FDA’s framework for digitally der",
+    "language": "en",
+    "article": true,
+    "issue": 11
+  },
+  {
+    "path": "/lifeecode/podcast/",
+    "legacyPath": "/podcast",
+    "module": "podcast",
+    "title": "The Podcast | LifeeCode",
+    "description": "Dive deeper into the week’s most important health-tech stories with thoughtful commentary and analysis. Built for your commute, workout, or downtime.",
+    "language": "en",
+    "article": false
+  },
+  {
+    "path": "/lifeecode/hindi/",
+    "legacyPath": "/hindi",
+    "module": "hindi",
+    "title": "Health tech, Hindi mein. | LifeeCode",
+    "description": "यह LifeeCode की independent Hindi / Hinglish podcast series है। मुख्य body text देवनागरी में है, जबकि AI, privacy, wearables, sleep score, smartwatch जैसे familiar technical terms Roman script में रहे",
+    "language": "hi",
+    "article": false
+  },
+  {
+    "path": "/lifeecode/hindi/briefs/8/",
+    "legacyPath": "/hindi/briefs/8",
+    "module": "hindi-briefs-8",
+    "title": "एक ही wearable पर इतने अलग नियम क्यों? | LifeeCode",
+    "description": "इस हफ़्ते का सबसे बड़ा signal: एक ही sensor वाला wearable अलग नियमों के तहत आ सकता है—असल फर्क उसके claims में होता है। इसलिए watch, ring या patch पर दिखने वाला health score समझने से पहले जानिए कि वह ",
+    "language": "hi",
+    "article": true,
+    "issue": 8
+  },
+  {
+    "path": "/lifeecode/hindi/briefs/9/",
+    "legacyPath": "/hindi/briefs/9",
+    "module": "hindi-briefs-9",
+    "title": "Wearables clinic में real tools क्यों नहीं बन पाते? | LifeeCode",
+    "description": "Smartwatch या glucose monitor बहुत data दे सकते हैं। लेकिन इस हफ़्ते का बड़ा signal यह है कि data तभी useful care बनेगा जब वह reliable हो, clinician के workflow में fit हो, और patient की privacy सुरक्",
+    "language": "hi",
+    "article": true,
+    "issue": 9
+  },
+  {
+    "path": "/lifeecode/hindi/briefs/11/",
+    "legacyPath": "/hindi/briefs/11",
+    "module": "hindi-briefs-11",
+    "title": "Wearable score कब real clinical outcome बनता है? | LifeeCode",
+    "description": "इस हफ़्ते का signal: sensor movement measure कर सकता है और app उसे score में बदल सकता है। लेकिन वही score आपकी health में सचमुच meaningful बदलाव दिखाता है या नहीं—यह सिर्फ़ evidence साबित कर सकता है।",
+    "language": "hi",
+    "article": true,
+    "issue": 11
+  },
+  {
+    "path": "/lifeecode/about/",
+    "legacyPath": "/about",
+    "module": "about",
+    "title": "A calmer way to understand the technology shaping your health. | LifeeCode",
+    "description": "LifeeCode is a weekly health-technology briefing by Deveendra Murmu . It examines the shifts that can affect everyday health decisions—from wearables and medical AI to regulatory change and personal-d",
+    "language": "en",
+    "article": false
+  }
+]
