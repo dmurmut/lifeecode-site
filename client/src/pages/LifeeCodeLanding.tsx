@@ -1,3 +1,4 @@
+import { latestBriefPath, latestIssue } from "@/content/lifeecode/pages";
 import LifeeCodeLayout from "@/components/LifeeCodeLayout";
 import { usePageMeta } from "@/hooks/usePageMeta";
 
@@ -18,7 +19,7 @@ export default function LifeeCodeLanding() {
           />
           <div className="absolute inset-0 -z-10 bg-white/60"></div>
           <div className="lc-frame flex min-h-[620px] flex-col items-center justify-center py-16 text-center md:min-h-[650px]">
-            <p className="lc-eyebrow">Episode 11 is now live</p>
+            <p className="lc-eyebrow">Episode {latestIssue.issue} is now live</p>
             <h1 className="lc-hero-heading max-w-4xl">
               The Future of Your Well-being
             </h1>
@@ -28,8 +29,8 @@ export default function LifeeCodeLanding() {
               lens, so you stay informed without the noise.
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-2.5">
-              <a href="/lifeecode/briefs/11/" className="lc-button-primary">
-                Read Episode 11{" "}
+              <a href={latestBriefPath} className="lc-button-primary">
+                Read Episode {latestIssue.issue}{" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="14"

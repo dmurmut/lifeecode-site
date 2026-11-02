@@ -2,7 +2,7 @@ import { Suspense, useEffect } from "react";
 import { useLocation } from "wouter";
 import LifeeCodeLayout from "@/components/LifeeCodeLayout";
 import { usePageMeta } from "@/hooks/usePageMeta";
-import manifest from "@/content/lifeecode/manifest.json";
+import { allPages as manifest } from "@/content/lifeecode/pages";
 import { publicationPages } from "@/content/lifeecode/registry";
 
 export default function PublicationPage() {

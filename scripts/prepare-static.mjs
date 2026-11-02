@@ -5,11 +5,14 @@ const root = path.resolve(import.meta.dirname, "..");
 const site = JSON.parse(
   await readFile(path.join(root, "client/src/site.config.json"), "utf8")
 );
-const manifest = JSON.parse(
-  await readFile(
-    path.join(root, "client/src/content/lifeecode/manifest.json"),
-    "utf8"
-  )
+const vite = await createServer({
+  root: path.join(root, "client"),
+  configFile: path.join(root, "vite.config.ts"),
+  server: { middlewareMode: true },
+  appType: "custom",
+});
+const { renderPath, allPages: manifest } = await vite.ssrLoadModule(
+  "/src/entry-prerender.tsx"
 );
 const authors = [
   { path: "/", file: "Home", title: "Deveendra Murmu — Nonfiction Author" },
@@ -47,18 +50,7 @@ for (const entry of authors) {
   entry.language = "en";
 }
 const pages = [...authors, ...manifest];
-const redirectRules = manifest
-  .filter(e => e.legacyPath != "/about")
-  .flatMap(e => [
-    `${e.legacyPath} ${e.path} 301`,
-    `${e.legacyPath}/ ${e.path} 301`,
-  ]);
-await writeFile(
-  path.join(root, "client/public/_redirects"),
-  "# Host-specific redirect candidate; verify production host support before launch.\n# /about is intentionally reserved for the author biography.\n" +
-    redirectRules.join("\n") +
-    "\n"
-);
+// Legacy URL redirects are served by vercel.json.
 const out = path.join(root, "dist/public");
 let template = await readFile(path.join(out, "index.html"), "utf8");
 if (!template.includes('<div id="root"></div>')) {
@@ -73,14 +65,7 @@ const escape = s =>
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;");
 const canonical = p => `https://${site.productionHost}${p}`;
-const vite = await createServer({
-  root: path.join(root, "client"),
-  configFile: path.join(root, "vite.config.ts"),
-  server: { middlewareMode: true },
-  appType: "custom",
-});
 try {
-  const { renderPath } = await vite.ssrLoadModule("/src/entry-prerender.tsx");
   async function emit(entry, markup, dest) {
     let html = template
       .replace(

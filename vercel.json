@@ -155,6 +155,16 @@
       "source": "/hindi/briefs/11/",
       "destination": "/lifeecode/hindi/briefs/11/",
       "permanent": true
+    },
+    {
+      "source": "/briefs/:issue(\\d+)",
+      "destination": "/lifeecode/briefs/:issue/",
+      "permanent": true
+    },
+    {
+      "source": "/briefs/:issue(\\d+)/",
+      "destination": "/lifeecode/briefs/:issue/",
+      "permanent": true
     }
   ],
   "headers": [

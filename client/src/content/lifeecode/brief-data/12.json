@@ -1,0 +1,194 @@
+{
+  "issue": 12,
+  "coverage": "August 24 – 30, 2026",
+  "signal": "This week, LifeeCode examines the first FDA-authorized wearable that continuously monitors both glucose and ketones, the FDA’s READI-Home challenge for home recovery technology, a review that finds transparency gaps beneath wearable research, a safety wearable for aging adults that states its own limits, and Google Research’s GlucoFM model for continuous glucose data.",
+  "notice": "LifeeCode is educational and does not provide medical advice. Decisions about symptoms, treatment, AI tools, or medical devices should be made with a qualified clinician.",
+  "deepDive": {
+    "title": "One Sensor, Two Signals: A Wearable May Help People With Diabetes See Trouble Earlier",
+    "privacy": "medium",
+    "take": "Glucose tells only part of the story. A new FDA-authorized wearable combines glucose and ketone trends, but its real value is in helping people act earlier with clinical guidance—not replacing symptoms, judgment, or care.",
+    "sections": [
+      {
+        "heading": "What happened",
+        "paragraphs": [
+          "On August 25, the U.S. Food and Drug Administration authorized the Libre Duo 10 Day Continuous Dual Glucose Ketone Monitoring System for people aged two years and older living with diabetes [1]. The system is the first wearable authorized in the United States to continuously monitor ketones, and the first worldwide to continuously monitor both glucose and ketones with one device [1].",
+          "The device measures glucose and ketones in interstitial fluid, sends readings wirelessly to a compatible smartphone, and can alert users when ketones reach a concerning threshold [1]. This matters because high ketone levels can signal diabetic ketoacidosis, or DKA, a serious complication that can develop quickly. Until now, people monitoring ketones had generally relied on separate point-in-time tests, which could not show whether levels were rising or falling [1].",
+          "The FDA says its authorization review included six clinical studies with more than 600 participants. It found that the system accurately tracked clinically meaningful differences in ketone levels across its 10-day wear period, including elevated ketones before the onset of DKA [1]. The agency also makes an essential point: ketone readings should always be interpreted in the context of glucose readings and symptoms [1]."
+        ]
+      },
+      {
+        "heading": "The hidden risk / the opportunity",
+        "paragraphs": [
+          "The opportunity is meaningful. A continuous view of both glucose and ketone trends can give people and caregivers more context during illness, missed insulin, vomiting, or other situations where DKA risk may rise. More timely information may support earlier contact with a care team and reduce reliance on a single, isolated reading.",
+          "The hidden risk is false reassurance. A wearable alert is not the same as a diagnosis, and a normal-looking screen should never overrule concerning symptoms or a personal diabetes action plan. Sensors can have limitations, people may miss alerts, and an app screen cannot evaluate the full clinical picture. The strongest use of this technology is as part of informed self-management and clinician-guided care—not as an independent decision-maker."
+        ]
+      },
+      {
+        "heading": "What you should do",
+        "paragraphs": [
+          "If you live with diabetes or care for someone who does, discuss with your clinician whether continuous ketone monitoring is relevant for your condition and plan. Ask what readings or symptoms should trigger action, how alerts fit with your existing sick-day plan, and what the device can and cannot tell you.",
+          "Before connecting any health sensor to a phone or care platform, review what data the app stores, where it is processed, whether it is shared with a care team or third parties, and how to delete or export it. Continuous readings can reveal daily routines, meals, sleep patterns, activity, and illness-related changes. Treat that data as sensitive health information."
+        ]
+      },
+      {
+        "heading": "The bigger picture",
+        "paragraphs": [
+          "This authorization signals a shift in wearable health technology. The most useful next-generation sensors may not simply collect more data. They may combine signals that help people understand risk in context. Yet this progress raises the same standard for every connected device: the more consequential the alert, the clearer its evidence, limits, instructions, and data practices must be."
+        ]
+      }
+    ],
+    "privacyRating": "Minute-by-minute glucose and ketone data are highly sensitive. The device transmits readings to a phone, and additional data flows may depend on the companion app, connected platforms, and care-team sharing settings.",
+    "sources": [
+      {
+        "label": "FDA — First Wearable That Continuously Monitors Both Ketones and Blood Sugar, August 25, 2026",
+        "url": "https://www.fda.gov/news-events/press-announcements/fda-authorizes-first-wearable-device-continuously-monitors-both-ketone-levels-and-blood-sugar"
+      }
+    ]
+  },
+  "signals": [
+    {
+      "title": "The FDA Is Building a Test Bed for Home-Based Recovery Technology",
+      "privacy": "medium",
+      "paragraphs": [
+        "The FDA announced the first participants in its READI-Home Innovation Challenge, a program intended to accelerate access to medical-device technologies that could support patients and caregivers after an acute hospital stay [2]. READI-Home stands for Reducing Readmissions through Device Innovation for the Home, and participants enter an interaction phase with the FDA as they develop or refine eligible products [2].",
+        "The programme is not a statement that any selected device has proven it reduces readmissions. It is an early-engagement pathway for technologies designed to support care at home, where missed warning signs, caregiver strain, and difficult handoffs can turn recovery into a return trip to hospital."
+      ],
+      "whyItMatters": "The hospital-to-home transition is one of the moments when health technology can either help or overwhelm. A device is useful only if it fits into a clear plan: who sees the data, what happens after an alert, and whom the patient or caregiver can contact.",
+      "futuristLens": "The next home-health winners may be less about a single device and more about the care system around it. Sensors, apps, and remote monitoring have value when they reduce uncertainty for patients and caregivers rather than add another stream of unreviewed alerts.",
+      "sources": [
+        {
+          "label": "FDA — READI-Home Innovation Challenge",
+          "url": "https://www.fda.gov/medical-devices/home-health-care-hub/fda-readi-home-innovation-challenge-reducing-readmissions-through-device-innovation-home"
+        }
+      ]
+    },
+    {
+      "title": "A Review of 162 Wearable Studies Finds a Transparency Problem Beneath the Data",
+      "privacy": "high",
+      "paragraphs": [
+        "A new Journal of Medical Internet Research scoping review examined 162 studies using wearables and connected devices in longitudinal health research [3]. The review found that research methods and reporting practices varied widely. Sample-size determination was reported in 30% of studies, variable-selection methods in 27%, and specific missing-data handling in 22% [3]. Only seven studies, or 4.3%, explicitly discussed statistical challenges linked to large or high-dimensional datasets [3].",
+        "This does not mean wearable research is untrustworthy. It means the field is still building the shared standards needed to compare results, reproduce findings, and understand when a digital signal is robust. The study’s authors call for stronger methodological transparency and more consistent reporting [3]."
+      ],
+      "whyItMatters": "When a health product cites “research-backed insights,” it is fair to ask what kind of research, in which population, with which device, and how missing or messy real-world data were handled. Passive data can look objective while still depending on many hidden analytical choices.",
+      "futuristLens": "As health devices collect richer streams of behavior and physiology, scientific credibility will increasingly depend on transparent methods, not just larger datasets. Trustworthy wellness technology should be able to explain both what it measures and how it reached its conclusion.",
+      "sources": [
+        {
+          "label": "JMIR — Digital Phenotyping in Health Research: Scoping Review",
+          "url": "https://www.jmir.org/2026/1/e91747"
+        }
+      ]
+    },
+    {
+      "title": "A New Safety Wearable for Aging Adults Makes Its Limitation Explicit",
+      "privacy": "medium",
+      "paragraphs": [
+        "Medical Guardian announced Guardian Flex, a new health-and-safety wearable designed for aging adults [4]. According to the company, its features include 24/7 emergency monitoring, 4G LTE connectivity, integrated GPS location, two-way voice communication, and fall detection [4]. The launch is notable less for novelty than for its focus on daily wearability and emergency access.",
+        "The most responsible detail is in the company’s own caveat: fall detection does not detect every fall, and a user should press the help button whenever possible [4]. That is a reminder that even a well-designed safety wearable is a support tool, not a guarantee."
+      ],
+      "whyItMatters": "If you are choosing a safety wearable for yourself, a parent, or another loved one, consider the full chain: comfort, battery life, cellular coverage, emergency response, location sharing, setup, and the person’s willingness to wear it. The best device is often the one that can be used reliably in a real routine.",
+      "futuristLens": "Wearable safety is moving from a product category to a care-coordination layer. The important question is not just whether a device detects an event. It is whether the right person receives a clear signal and can respond when it matters.",
+      "sources": [
+        {
+          "label": "Medical Guardian announcement via PR Newswire",
+          "url": "https://www.prnewswire.com/news-releases/medical-guardian-launches-guardian-flex-a-health--safety-wearable-designed-for-the-next-generation-of-aging-adults-302857612.html"
+        }
+      ]
+    },
+    {
+      "title": "Google Research Is Training AI to Read Continuous Glucose Data More Carefully",
+      "privacy": "high",
+      "paragraphs": [
+        "Google Research introduced GlucoFM, a self-supervised foundation model for continuous glucose-monitoring data [5]. The model separates slower glucose trends from short-term deviations and was pre-trained on 109,066 hours of unlabeled CGM data from a research dataset and four published datasets, representing 477 participant/session records [5]. Google reports evaluations across metabolic prediction tasks, including diabetes-risk assessment, insulin resistance, beta-cell dysfunction, and post-meal glucose response [5].",
+        "One useful design choice is that GlucoFM explicitly accounts for missing and noisy data. In real life, CGM readings can be interrupted or affected by sensor artifacts. A model that treats every reading as equally reliable can turn noise into an overly confident story [5]."
+      ],
+      "whyItMatters": "This is research infrastructure, not a new consumer feature or a medical decision tool. It shows how AI may help researchers interpret complex glucose patterns, but it does not mean an AI model can diagnose you, predict your future health, or replace your care team.",
+      "futuristLens": "The next step for health AI is not simply making more predictions. It is making models that acknowledge uncertainty, handle imperfect data, and earn trust through rigorous independent validation.",
+      "sources": [
+        {
+          "label": "Google Research — GlucoFM",
+          "url": "https://research.google/blog/glucofm-foundation-model-for-continuous-glucose-monitoring/"
+        }
+      ]
+    }
+  ],
+  "radar": [
+    {
+      "story": "Dual glucose-and-ketone monitoring",
+      "privacy": "high",
+      "data": "Device maker, smartphone app, cloud services, care platform, and any connected caregiver or clinician",
+      "action": "Review app permissions and data-sharing settings; ask how continuous readings are stored, shared, and deleted."
+    },
+    {
+      "story": "READI-Home device innovation",
+      "privacy": "medium",
+      "data": "Device makers, home-care teams, health systems, insurers, and remote-monitoring platforms",
+      "action": "Before enrolment or purchase, ask who monitors alerts and whether your data enters the medical record or care-management system."
+    },
+    {
+      "story": "Wearable digital-phenotyping research",
+      "privacy": "high",
+      "data": "Researchers, data processors, device platforms, cloud vendors, and future secondary users of research data",
+      "action": "Ask how data is deidentified, whether it can be reused, how missing data are handled, and how long records are retained."
+    },
+    {
+      "story": "Aging-adult safety wearable",
+      "privacy": "medium",
+      "data": "Device maker, monitoring centre, cellular/GPS services, emergency contacts, and caregivers",
+      "action": "Confirm who can see location data, when it is shared, and how an emergency contact is notified or removed."
+    },
+    {
+      "story": "AI for CGM research",
+      "privacy": "high",
+      "data": "Research teams, data-hosting services, model developers, and potentially linked health-data platforms",
+      "action": "Treat AI glucose insights as experimental unless independently validated; check whether data may be used to train or improve models."
+    }
+  ],
+  "globalWatch": {
+    "title": "A Sensor Is Only Half the System: Dexcom and Health2Sync Connect Diabetes Care Across Australia and Singapore",
+    "paragraphs": [
+      "Dexcom and Health2Sync have announced a partnership focused on connected diabetes care in Australia and Singapore [6] [7]. Available industry reporting describes a model that links continuous glucose monitoring with a digital chronic-disease-management platform, with the goal of supporting people living with diabetes and their care teams through more connected information and workflow [6] [7].",
+      "This is a useful global signal because it shows where connected care is heading. A sensor by itself provides a stream of readings. A care platform may add education, contextualisation, follow-up, and care-team coordination. That can reduce fragmentation, especially for chronic conditions that demand daily decisions between appointments.",
+      "But integration expands the data path. The more services that connect to glucose readings, the more important it becomes to ask who can access the information, whether sharing is opt-in, what happens when a service changes vendors, and how easily users can withdraw consent. Better care coordination should not require invisible data coordination."
+    ],
+    "sources": [
+      {
+        "label": "Health Startup Taiwan — Dexcom, Health2Sync partner on diabetes care in Asia",
+        "url": "https://www.hst.org.tw/en/story/content/6568"
+      },
+      {
+        "label": "Pulse+IT — Dexcom partners with Health2Sync across Australia and Singapore",
+        "url": "https://www.pulseit.news/australian-digital-health/dexcom-partners-with-health2sync-across-australia-and-singapore/"
+      }
+    ]
+  },
+  "references": [
+    {
+      "label": "FDA Authorizes First Wearable Device That Continuously Monitors Both Ketone Levels and Blood Sugar",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-authorizes-first-wearable-device-continuously-monitors-both-ketone-levels-and-blood-sugar"
+    },
+    {
+      "label": "FDA READI-Home Innovation Challenge",
+      "url": "https://www.fda.gov/medical-devices/home-health-care-hub/fda-readi-home-innovation-challenge-reducing-readmissions-through-device-innovation-home"
+    },
+    {
+      "label": "Digital Phenotyping in Health Research: Scoping Review of Methods, Gaps, and Opportunities | JMIR",
+      "url": "https://www.jmir.org/2026/1/e91747"
+    },
+    {
+      "label": "Medical Guardian Launches Guardian Flex | PR Newswire",
+      "url": "https://www.prnewswire.com/news-releases/medical-guardian-launches-guardian-flex-a-health--safety-wearable-designed-for-the-next-generation-of-aging-adults-302857612.html"
+    },
+    {
+      "label": "GlucoFM: Foundation model for continuous glucose monitoring | Google Research",
+      "url": "https://research.google/blog/glucofm-foundation-model-for-continuous-glucose-monitoring/"
+    },
+    {
+      "label": "Dexcom, Health2Sync partner on diabetes care in Asia | Health Startup Taiwan",
+      "url": "https://www.hst.org.tw/en/story/content/6568"
+    },
+    {
+      "label": "Dexcom partners with Health2Sync across Australia and Singapore | Pulse+IT",
+      "url": "https://www.pulseit.news/australian-digital-health/dexcom-partners-with-health2sync-across-australia-and-singapore/"
+    }
+  ]
+}

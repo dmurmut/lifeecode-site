@@ -1,5 +1,7 @@
 # LifeeCode editorial workspace
 
+Start with `RUNBOOK.md` (the weekly scheduled runs) and `PUBLISHING.md` (how a brief goes on the site).
+
 Not part of the website build. Holds the weekly production workflows and the episode archive used for duplicate screening.
 
 - `workflows/english-master-workflow.md` — current English weekly workflow (faceless-first, eight-file package, no publishing).

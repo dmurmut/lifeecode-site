@@ -1,3 +1,4 @@
+import { latestBriefPath, latestIssue } from "./pages";
 // Preserved published LifeeCode content. Edit deliberately; do not rewrite during design changes.
 export default function PublishedContent() {
   return (
@@ -225,13 +226,12 @@ export default function PublishedContent() {
               English stream
             </p>
             <h3 className="mt-3 text-[2rem] lc-preserved-title">
-              Episode 11 is live
+              Episode {latestIssue.issue} is live
             </h3>
             <p className="mt-4 text-[.85rem] leading-6 text-slate-600">
-              The latest English brief asks which wearable scores actually
-              measure meaningful health outcomes.
+              The latest English brief: {latestIssue.title}
             </p>
-            <a href="/lifeecode/briefs/11/" className="lc-text-link mt-5">
+            <a href={latestBriefPath} className="lc-text-link mt-5">
               Read the English brief{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
