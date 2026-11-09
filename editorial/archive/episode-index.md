@@ -6,7 +6,7 @@
 | 1–3, 5–9, 11 | | see /lifeecode/briefs/ on the site | site |
 | 12 | Aug 24–30, 2026 | One Sensor, Two Signals: A Wearable May Help People With Diabetes See Trouble Earlier | published (brief-data/12.json) |
 | 13–21 | | Titles pending from the creator; produced in Manus, not published on the site | |
-| 22 | Nov 1–7, 2026 | The Vendor You Never Met: How a Transcription Company's Missing Login Check Exposed 13.3 Million Patients (working title) | in production — `editorial/episodes/en22_november_1_7_2026/` |
+| 22 | Nov 1–7, 2026 | The Vendor You Never Met: A Transcription Breach, 13.3 Million Patients, and a Missing Login Check | awaiting review — pull request open; brief at `brief-data/22.json`; package in `editorial/episodes/en22_november_1_7_2026/` |
 
 ## Hindi
 | Episode | Title | Source |
