@@ -15,7 +15,7 @@
 | 1–10 | | Spotify links in archive/data |
 | 11–19 | Titles pending from the creator | |
 | 20 | क्या आपकी smartwatch आपका high BP पकड़ सकती है? (final title; coverage Nov 1–7, 2026; release Tue 10 Nov 2026 8:00 AM IST) | package ready, awaiting creator review — source re-verification pending (see `verification_log_hi20.md`) — `editorial/episodes/hi20_november_1_7_2026/` |
-| 21 | आपका health data, आपकी permission? — India के नए data law का पहला कदम (working title; coverage Nov 8–14, 2026; planned release Tue 17 Nov 2026 8:00 AM IST) | in production — `editorial/episodes/hi21_november_8_14_2026/` |
+| 21 | आपका health data, आपकी permission? — Consent Manager और India का नया data law (final title; coverage Nov 8–14, 2026; release Tue 17 Nov 2026 8:00 AM IST) | package ready, awaiting creator review — source re-verification pending (see `verification_log_hi21.md`) — `editorial/episodes/hi21_november_8_14_2026/` |
 
 Next episodes: English 24, Hindi 22 (week of 15–21 November 2026).
 
