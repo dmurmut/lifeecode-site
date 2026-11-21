@@ -4,7 +4,7 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 const sections = [
   {
     title: "Who is responsible",
-    body: "This website and the author newsletter are run by Deveendra Murmu through Mainodi Academy LLC, New Jersey, USA. Questions about your information can be sent to hello@devmmurmu.com.",
+    body: "This website and the author newsletter are run by Deveendra Murmu through Mainod Academy LLC, New Jersey, USA. Questions about your information can be sent to hello@devmmurmu.com.",
   },
   {
     title: "What the newsletter collects",
