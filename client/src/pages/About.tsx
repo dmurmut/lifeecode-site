@@ -1,3 +1,4 @@
+import AuthorPortrait from "@/components/AuthorPortrait";
 import { ArrowRight } from "lucide-react";
 import SectionCTA from "@/components/SectionCTA";
 import SiteLayout from "@/components/SiteLayout";
@@ -28,6 +29,7 @@ export default function About() {
           <div>
             <p className="section-kicker">About the author</p>
             <h1 className="page-title literary-title mt-6">About Deveendra Murmu</h1>
+            <AuthorPortrait className="mt-10 max-w-[320px]" />
           </div>
           <div className="max-w-3xl lg:pt-14">
             <p className="editorial-statement italic text-[#7e334e]">Some questions become more interesting the longer you live with them.</p>

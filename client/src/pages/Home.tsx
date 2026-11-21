@@ -1,3 +1,4 @@
+import AuthorPortrait from "@/components/AuthorPortrait";
 import NewsletterForm from "@/components/NewsletterForm";
 import { ArrowRight, Mail } from "lucide-react";
 import BookMockCover from "@/components/BookMockCover";
@@ -127,7 +128,7 @@ export default function Home() {
         <div className="container grid gap-14 lg:grid-cols-[0.65fr_1.35fr]">
           <div>
             <p className="section-kicker">About the author</p>
-            <div className="mt-8 hidden h-px w-full bg-[#302b31]/15 lg:block" />
+            <AuthorPortrait className="mt-8 max-w-[280px]" />
             <p className="editorial-quote mt-8 max-w-xs italic text-[#7e334e]">“Not to promise complete control, but to help us see more clearly.”</p>
           </div>
           <div>
