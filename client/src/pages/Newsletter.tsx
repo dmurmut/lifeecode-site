@@ -1,3 +1,4 @@
+import NewsletterForm from "@/components/NewsletterForm";
 import SiteLayout from "@/components/SiteLayout";
 import { usePageMeta } from "@/hooks/usePageMeta";
 
@@ -69,21 +70,9 @@ export default function Newsletter() {
           </div>
 
           <div className="border-t-2 border-[#f0ce8a] bg-[#542c3c]/55 p-5 sm:p-8 lg:translate-y-10">
-            <form className="grid gap-4" aria-label="Newsletter staging form" onSubmit={(event) => event.preventDefault()}>
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="mb-2 block text-xs font-bold uppercase tracking-[0.13em] text-[#f1deca]" htmlFor="newsletter-first-name">First name <span className="font-normal normal-case tracking-normal">(optional)</span></label>
-                  <input id="newsletter-first-name" name="first-name" type="text" disabled placeholder="First name" className="min-h-12 w-full rounded-lg border border-white/25 bg-[#fbfbfa] px-4 text-sm text-[#302b31] opacity-90 placeholder:text-[#7e756c]" />
-                </div>
-                <div>
-                  <label className="mb-2 block text-xs font-bold uppercase tracking-[0.13em] text-[#f1deca]" htmlFor="newsletter-email">Email address</label>
-                  <input id="newsletter-email" name="email" type="email" disabled placeholder="you@example.com" className="min-h-12 w-full rounded-lg border border-white/25 bg-[#fbfbfa] px-4 text-sm text-[#302b31] opacity-90 placeholder:text-[#7e756c]" />
-                </div>
-              </div>
-              <button type="submit" disabled className="min-h-12 rounded-lg bg-[#302b31] px-6 text-xs font-bold uppercase tracking-[0.15em] text-white opacity-75">Join the Newsletter</button>
-            </form>
+            <NewsletterForm variant="page" />
             <p className="mt-5 text-xs leading-relaxed text-[#f1deca]">
-              <strong>Staging notice:</strong> this form is intentionally disabled and does not collect personal information. It will be activated only after an established email provider, consent terms, welcome email, and unsubscribe process are approved and tested. Read the <a href="/privacy/" className="underline underline-offset-2 hover:text-white">draft privacy notice</a>.
+              You'll get an email asking you to confirm your subscription. Every newsletter includes a one-click unsubscribe link. Your details are handled by Kit, the email service I use, and are never sold or shared. Read the <a href="/privacy/" className="underline underline-offset-2 hover:text-white">privacy notice</a>.
             </p>
           </div>
         </div>

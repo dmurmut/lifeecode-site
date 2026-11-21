@@ -1,3 +1,4 @@
+import NewsletterForm from "@/components/NewsletterForm";
 import { ArrowRight, Mail } from "lucide-react";
 import BookMockCover from "@/components/BookMockCover";
 import SiteLayout from "@/components/SiteLayout";
@@ -150,14 +151,8 @@ export default function Home() {
             <p className="reading-text mt-6 max-w-xl">Occasional essays on the forces shaping how we think, choose, and live—along with updates about my books.</p>
           </div>
           <div className="border-t-2 border-[#f0ce8a] bg-[#542c3c]/55 p-5 sm:p-7 lg:translate-y-10">
-            <form className="grid gap-3 sm:grid-cols-[0.7fr_1.3fr_auto]" aria-label="Newsletter staging form" onSubmit={(event) => event.preventDefault()}>
-              <label className="sr-only" htmlFor="home-first-name">First name</label>
-              <input id="home-first-name" type="text" disabled placeholder="First name (optional)" className="min-h-12 rounded-lg border border-white/25 bg-[#fbfbfa] px-4 text-sm text-[#302b31] opacity-90 placeholder:text-[#7e756c]" />
-              <label className="sr-only" htmlFor="home-email">Email address</label>
-              <input id="home-email" type="email" disabled placeholder="Email address" className="min-h-12 rounded-lg border border-white/25 bg-[#fbfbfa] px-4 text-sm text-[#302b31] opacity-90 placeholder:text-[#7e756c]" />
-              <button type="submit" disabled className="min-h-12 rounded-lg bg-[#302b31] px-6 text-xs font-bold uppercase tracking-[0.15em] text-white opacity-75">Subscribe</button>
-            </form>
-            <p className="mt-4 text-xs leading-relaxed text-[#f1deca]">Staging only—this disabled form does not collect addresses. Review the full <a href="/newsletter/" className="underline underline-offset-2 hover:text-white">newsletter page</a> and <a href="/privacy/" className="underline underline-offset-2 hover:text-white">draft privacy notice</a>.</p>
+            <NewsletterForm variant="band" />
+            <p className="mt-4 text-xs leading-relaxed text-[#f1deca]">Occasional emails, confirmed by you, with an unsubscribe link in every one. See the <a href="/newsletter/" className="underline underline-offset-2 hover:text-white">newsletter page</a> and <a href="/privacy/" className="underline underline-offset-2 hover:text-white">privacy notice</a>.</p>
           </div>
         </div>
       </section>

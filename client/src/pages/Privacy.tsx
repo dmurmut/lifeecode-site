@@ -3,31 +3,55 @@ import { usePageMeta } from "@/hooks/usePageMeta";
 
 const sections = [
   {
-    title: "Current staging state",
-    body: "The author-newsletter form is disabled in this staging preview. It does not submit or store names or email addresses. No author mailing list has been created through this preview.",
+    title: "Who is responsible",
+    body: "This website and the author newsletter are run by Deveendra Murmu through Mainodi Academy LLC, New Jersey, USA. Questions about your information can be sent to hello@devmmurmu.com.",
+  },
+  {
+    title: "What the newsletter collects",
+    body: "When you subscribe, I collect your email address and, if you choose to give it, your first name. Kit, the email service that runs the newsletter, also records the date and time you signed up and confirmed, and the technical details of that request such as your IP address, as a record of your consent. Kit may also record whether emails are opened or links are clicked, which helps me understand what readers find useful.",
+  },
+  {
+    title: "Why, and on what basis",
+    body: "Your details are used only to send the author newsletter: occasional essays, reflections and news about my books. I send it because you asked for it and confirmed your subscription, and you can withdraw that consent at any time.",
+  },
+  {
+    title: "Kit, the email provider",
+    body: "The newsletter is managed through Kit (ConvertKit LLC), which stores subscriber details on its servers in the United States and processes them on my behalf. Kit's own privacy policy is available at kit.com/privacy.",
+  },
+  {
+    title: "Sharing",
+    body: "I don't sell, rent or trade your information, and I don't share it with advertisers. It is kept separate from LifeeCode and any other project unless you have expressly subscribed to those as well.",
+  },
+  {
+    title: "Unsubscribing and your choices",
+    body: "Every newsletter includes a one-click unsubscribe link. You can also email hello@devmmurmu.com to ask what information I hold about you, to correct it, or to have it deleted.",
+  },
+  {
+    title: "How long it is kept",
+    body: "Your details are kept while you remain subscribed. If you unsubscribe, I stop emailing you; Kit may keep a minimal record of the unsubscribe so you are not emailed again by mistake. You can ask for that record to be deleted as well.",
   },
   {
     title: "Contact by email",
-    body: "If you email hello@devmmurmu.com, your address and the information you send are handled through the Hostinger-hosted mailbox so your message can be read and answered. Sending an inquiry does not subscribe you to the author newsletter.",
+    body: "If you email hello@devmmurmu.com, your address and message are handled through my Hostinger-hosted mailbox so I can read and reply. Emailing me does not subscribe you to the newsletter.",
   },
   {
-    title: "Before newsletter activation",
-    body: "Before the form is activated, this notice will identify the selected email provider, explain what information is collected and why, describe consent and retention, and provide a working method to unsubscribe. The author list will remain separate from LifeeCode unless a subscriber has expressly consented to both.",
-  },
-  {
-    title: "External destinations",
-    body: "Links to LinkedIn, X, YouTube, Spotify, research publications, regulators, and other third-party services take visitors to sites with their own privacy practices. Those services control the information collected on their platforms.",
+    title: "This website",
+    body: "The site is hosted by Vercel, which may keep basic server logs, including IP addresses, for security and reliability. The site itself does not use analytics, advertising or tracking cookies. Links to LinkedIn, X, YouTube, Spotify, research publications and other services take you to sites with their own privacy practices.",
   },
   {
     title: "LifeeCode",
-    body: "LifeeCode is being preserved as a separate publication section. Its health-technology articles are educational content, not personal medical advice. Its future privacy notice will describe any publication-specific forms or services separately from the author newsletter.",
+    body: "LifeeCode's health-technology articles are educational content, not personal medical advice. LifeeCode does not currently collect personal information through this site.",
+  },
+  {
+    title: "Changes",
+    body: "If these practices change, this page will be updated and the date below revised. Last updated: November 2026.",
   },
 ];
 
 export default function Privacy() {
   usePageMeta(
     "Privacy — Deveendra Murmu",
-    "Draft privacy information for the Deveendra Murmu author website staging preview.",
+    "How Deveendra Murmu’s website and author newsletter collect, use and protect your information.",
   );
 
   return (
@@ -35,12 +59,12 @@ export default function Privacy() {
       <section className="editorial-grid border-b border-[#302b31]/10 py-22 lg:py-30">
         <div className="container grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
           <div>
-            <p className="section-kicker">Draft for review</p>
+            <p className="section-kicker">Privacy notice</p>
             <h1 className="page-title mt-6">Privacy</h1>
           </div>
           <div className="max-w-2xl">
             <p className="editorial-quote italic text-[#7e334e]">Clear terms should come before data collection, not after it.</p>
-            <p className="reading-text mt-6">This page records the current staging state. It is not the final launch policy. The final wording will be completed after the newsletter provider is selected and the site’s data practices are reviewed.</p>
+            <p className="reading-text mt-6">This page explains, in plain language, what information this website and the author newsletter collect, why, and the choices you have.</p>
           </div>
         </div>
       </section>

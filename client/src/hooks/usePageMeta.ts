@@ -51,7 +51,7 @@ export function usePageMeta(
     const staging = ![productionHost, `www.${productionHost}`].includes(
       window.location.hostname
     );
-    const draft = ["/privacy/", "/newsletter/", "/404/"].includes(pathname);
+    const draft = ["/404/"].includes(pathname);
     setMeta(
       "robots",
       !siteConfig.indexingEnabled || staging || noindex || draft
