@@ -1,28 +1,25 @@
 import AuthorPortrait from "@/components/AuthorPortrait";
 import NewsletterForm from "@/components/NewsletterForm";
-import { ArrowRight, Mail } from "lucide-react";
 import BookMockCover from "@/components/BookMockCover";
 import SiteLayout from "@/components/SiteLayout";
 import { usePageMeta } from "@/hooks/usePageMeta";
 
-const bookList = [
-  {
-    number: "01",
-    title: "What Should Remain Mine?",
-    question: "When AI can increasingly think and act for us, what should we hand over—and what deserves to remain ours?",
-    featured: true,
-  },
+const themes = [
+  ["01", "Technology", "What should we delegate, and what should remain ours?"],
+  ["02", "Behaviour", "Why does knowing so often fail to become doing?"],
+  ["03", "Influence", "How do other people’s expectations become our own?"],
+];
+
+const booksInProgress = [
   {
     number: "02",
-    title: "Why We Don't Do What We Know",
+    title: "Why We Don’t Do What We Know",
     question: "Why can we know what matters, genuinely intend to do it, and still behave differently?",
-    featured: false,
   },
   {
     number: "03",
     title: "Whose Life Is This?",
-    question: "How do other people's expectations become part of what we want—and which voices deserve influence?",
-    featured: false,
+    question: "How do other people’s expectations become part of what we want—and which voices deserve influence?",
   },
 ];
 
@@ -34,147 +31,116 @@ export default function Home() {
 
   return (
     <SiteLayout>
-      <section className="editorial-grid relative overflow-hidden border-b border-[#302b31]/25">
-        <div className="container grid min-h-[730px] items-center gap-16 py-20 lg:grid-cols-[1.55fr_0.45fr] lg:py-28">
-          <div className="max-w-4xl">
-            <p className="section-kicker">Deveendra Murmu / nonfiction</p>
-            <h1 className="page-title home-title mt-8 max-w-[900px] text-[#302b31]">
-              The forces that shape us. <em className="block font-normal text-[#7e334e] lg:ml-16">The lives we build.</em>
-            </h1>
-            <p className="reading-text mt-10 max-w-xl sm:ml-16">
-              Books and essays exploring how technology, behavior, other people, and our own assumptions shape how we think, choose, act, and become.
+      <section aria-labelledby="home-title">
+        <div className="site-frame flex flex-wrap items-end gap-x-24 gap-y-14 pb-20 pt-16 lg:pb-24 lg:pt-22">
+          <div className="min-w-0 flex-[999_1_34rem]">
+            <p className="section-kicker">Nonfiction author</p>
+            <h1 id="home-title" className="page-title home-title mt-5 max-w-[42rem]">The forces that shape us. The lives we build.</h1>
+            <p className="mt-7 max-w-[35rem] text-[1.3rem] leading-[1.6] text-[#3D4139]">
+              Books and essays exploring how technology, behaviour, other people, and our own assumptions shape how we think, choose, act, and become.
             </p>
-            <div className="mt-10 flex flex-col gap-3 sm:ml-16 sm:flex-row">
-              <a className="primary-button" href="/books/">Explore My Books <ArrowRight size={17} /></a>
-              <a className="secondary-button" href="/newsletter/">Join My Newsletter</a>
+            <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-3">
+              <a className="primary-button" href="/books/">Explore the books</a>
+              <a className="text-link" href="/newsletter/">Join the newsletter</a>
             </div>
           </div>
 
-          <aside className="relative max-w-sm border-l border-[#302b31]/30 pl-7 sm:pl-10 lg:mt-36 lg:justify-self-end" aria-label="Writing themes">
-            <p className="folio-label mb-8 text-[#7e334e]">Marginalia / 01—03</p>
-            {[
-              ["01", "Technology", "What should we delegate, and what should remain ours?"],
-              ["02", "Behavior", "Why does knowing so often fail to become doing?"],
-              ["03", "Influence", "How do other people's expectations become our own?"],
-            ].map(([number, title, text]) => (
-              <div key={number} className="border-t border-[#302b31]/15 py-6 last:border-b">
-                <div className="flex gap-5">
-                  <span className="font-mono text-sm text-[#7e511b]">{number}</span>
-                  <div>
-                    <h2 className="small-heading ">{title}</h2>
-                    <p className="compact-text mt-1.5 max-w-xs">{text}</p>
-                  </div>
-                </div>
+          <aside className="min-w-0 max-w-[22.5rem] flex-[1_1_18rem] border-l border-[#D8D2C6] pl-8" aria-labelledby="themes-title">
+            <h2 id="themes-title" className="folio-label mb-1.5 text-[#5B5F57]">What I write about</h2>
+            {themes.map(([number, title, text], index) => (
+              <div key={number} className={`py-4.5 ${index < themes.length - 1 ? "border-b border-[#D8D2C6]" : "pb-0"}`}>
+                <p className="font-serif text-[1.3rem] font-medium">
+                  <span className="mr-2.5 text-[#7E334E]">{number}</span>
+                  {title}
+                </p>
+                <p className="mt-1.5 text-[1rem] leading-[1.5] text-[#3D4139]">{text}</p>
               </div>
             ))}
           </aside>
         </div>
       </section>
 
-      <section className="theme-dark bg-[#302b31] text-[#fbfbfa]" aria-labelledby="featured-book-title">
-        <div className="container grid gap-16 py-24 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:py-32">
-          <BookMockCover />
-          <div className="max-w-3xl">
-            <p className="section-kicker section-kicker-light">Featured book</p>
-            <div className="mt-7 flex flex-wrap items-center gap-3">
-              <span className="rounded-[2px] border border-[#dbb777]/40 bg-[#dbb777]/10 px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#f0ce8a]">Forthcoming</span>
-              <span className="text-[0.68rem] font-semibold uppercase tracking-[0.17em] text-[#c8b6a2]">Book one</span>
-            </div>
-            <h2 id="featured-book-title" className="section-heading mt-6">What Should Remain Mine?</h2>
-            <p className="editorial-quote mt-5 max-w-2xl italic text-[#e0cfb8]">How to Delegate, Collaborate, and Think for Yourself in the Age of AI</p>
-            <div className="mt-8 space-y-5 text-[1.04rem] leading-relaxed text-[#e2d5c3]">
+      <div className="site-frame"><hr className="border-0 border-t border-[#D8D2C6]" /></div>
+
+      <section aria-labelledby="featured-book-title">
+        <div className="site-frame flex flex-wrap items-center gap-x-22 gap-y-12 py-20 lg:py-24">
+          <div className="w-full max-w-[20rem] flex-[0_1_20rem]">
+            <BookMockCover />
+          </div>
+          <div className="min-w-0 flex-[999_1_28rem]">
+            <p className="section-kicker">Book one · Forthcoming 2 February 2027</p>
+            <h2 id="featured-book-title" className="section-heading mt-4">What Should Remain Mine?</h2>
+            <p className="mt-2.5 font-serif text-[1.4rem] leading-[1.4] text-[#5B5F57]">How to Delegate, Collaborate, and Think for Yourself in the Age of AI</p>
+            <div className="mt-7 space-y-4">
               <p className="reading-text">AI can increasingly write, analyze, advise, and perform tasks for us. But deciding what to hand over is not simply a question of what technology can do.</p>
               <p className="reading-text">What should we delegate? When should we collaborate? And what should remain ours—not because machines cannot do it, but because doing it matters to who we become?</p>
-              <p className="reading-text"><em>What Should Remain Mine?</em> explores these questions through a practical framework: Delegate, Collaborate, Retain.</p>
             </div>
-            <a className="mt-10 inline-flex items-center gap-2 border-b border-[#dbb777] pb-1.5 text-sm font-bold uppercase tracking-[0.15em] text-[#f0ce8a] transition-colors hover:text-white" href="/books/what-should-remain-mine/">
-              Explore the Book <ArrowRight size={16} />
-            </a>
+            <a className="text-link mt-6" href="/books/what-should-remain-mine/">Read about the book</a>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#fbfbfa] py-24 lg:py-32" aria-labelledby="three-books-title">
-        <div className="container">
-          <div className="grid gap-8 border-b border-[#302b31]/15 pb-12 lg:grid-cols-[1fr_0.75fr] lg:items-end">
-            <div>
-              <p className="section-kicker">The books</p>
-              <h2 id="three-books-title" className="section-heading mt-5 max-w-3xl">Three books. <em className="font-normal text-[#7e334e]">Three human questions.</em></h2>
-            </div>
-            <p className="reading-text max-w-xl lg:justify-self-end">My books explore different parts of a larger question: What is shaping the life we are building—and how consciously are we participating in what comes next?</p>
-          </div>
-
-          <div className="ruled-list mt-10">
-            {bookList.map((book, index) => (
-              <article key={book.number} className={`grid gap-4 py-10 lg:grid-cols-[5rem_minmax(0,1fr)_minmax(14rem,0.65fr)] lg:items-start lg:gap-10 ${index === 1 ? "lg:ml-20" : index === 2 ? "lg:ml-8" : ""}`}>
-                <span className="folio-label pt-2 text-[#7e511b]">{book.number} /</span>
-                <div>
-                  <h3 className="row-heading max-w-xl">{book.title}</h3>
-                  <p className="folio-label mt-4 text-[#7e334e]">A book in progress</p>
+      <section className="band" aria-labelledby="in-progress-title">
+        <div className="site-frame py-18 lg:py-20">
+          <h2 id="in-progress-title" className="subsection-heading">Books in progress</h2>
+          <div className="ruled-list mt-7">
+            {booksInProgress.map((book) => (
+              <article key={book.number} className="flex flex-wrap gap-x-10 gap-y-2 py-6.5">
+                <span className="flex-[0_0_3rem] font-serif text-[1.25rem] text-[#7E334E]">{book.number}</span>
+                <div className="min-w-0 flex-[999_1_26rem]">
+                  <h3 className="row-heading">{book.title}</h3>
+                  <p className="mt-1.5 text-[1.1rem] leading-[1.55] text-[#3D4139]">{book.question}</p>
                 </div>
-                <div className="lg:pt-3">
-                  <p className="reading-text">{book.question}</p>
-                  {book.featured && (
-                    <a href="/books/what-should-remain-mine/" className="folio-label mt-6 inline-flex items-center gap-2 border-b border-[#7e334e] pb-1 text-[#7e334e]">Read about book one <ArrowRight size={15} /></a>
-                  )}
-                </div>
+                <span className="pt-1.5 text-[0.95rem] text-[#5B5F57]">In progress</span>
               </article>
             ))}
           </div>
+          <a className="text-link mt-6" href="/books/">All books</a>
         </div>
       </section>
 
-      <section className="border-y border-[#302b31]/10 bg-[#f1f0ed] py-24 lg:py-32" aria-labelledby="about-title">
-        <div className="container grid gap-14 lg:grid-cols-[0.65fr_1.35fr]">
-          <div>
+      <section aria-labelledby="about-title">
+        <div className="site-frame flex flex-wrap items-center gap-x-18 gap-y-10 py-20 lg:py-24">
+          <AuthorPortrait className="w-[15rem] flex-none" />
+          <div className="min-w-0 flex-[999_1_28rem]">
             <p className="section-kicker">About the author</p>
-            <AuthorPortrait className="mt-8 max-w-[280px]" />
-            <p className="editorial-quote mt-8 max-w-xs italic text-[#7e334e]">“Not to promise complete control, but to help us see more clearly.”</p>
-          </div>
-          <div>
-            <h2 id="about-title" className="section-heading ">A note from Deveendra</h2>
-            <div className="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed text-[#51484b]">
-              <p className="reading-text">I write about familiar human contradictions.</p>
-              <p className="reading-text">Why do we sometimes know what matters but fail to act on it? When technology can do more of our thinking, what should remain ours? How much of what we want has been shaped by other people's expectations?</p>
-              <p className="reading-text">These questions look different on the surface, but they share something underneath: our lives are shaped by forces we do not entirely choose or always notice.</p>
-              <p className="reading-text">My writing explores those forces—not to promise complete control, but to help us understand them more clearly and become more deliberate about the lives we build.</p>
-            </div>
-            <a className="secondary-button mt-9" href="/about/">More About Me <ArrowRight size={17} /></a>
+            <h2 id="about-title" className="subsection-heading mt-3.5">Deveendra Murmu</h2>
+            <p className="reading-text mt-4">
+              An engineer by training, Deveendra has spent more than three decades in information technology. He writes about familiar human contradictions—why we know what matters but fail to act, what should remain ours as technology does more of our thinking, and how other people’s expectations shape what we want.
+            </p>
+            <a className="text-link mt-5" href="/about/">More about Deveendra</a>
           </div>
         </div>
       </section>
 
-      <section className="theme-plum bg-[#7e334e] py-20 text-[#fbfbfa] lg:py-24" aria-labelledby="newsletter-title">
-        <div className="container grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <div>
-            <Mail size={28} strokeWidth={1.5} aria-hidden="true" />
-            <h2 id="newsletter-title" className="section-heading mt-6 max-w-2xl">See more clearly. Choose more deliberately.</h2>
-            <p className="reading-text mt-6 max-w-xl">Occasional essays on the forces shaping how we think, choose, and live—along with updates about my books.</p>
+      <div className="site-frame"><hr className="border-0 border-t border-[#D8D2C6]" /></div>
+
+      <section aria-labelledby="newsletter-title">
+        <div className="site-frame flex flex-wrap items-start gap-x-22 gap-y-10 py-20 lg:py-24">
+          <div className="min-w-0 flex-[1_1_26rem]">
+            <h2 id="newsletter-title" className="subsection-heading">An occasional letter</h2>
+            <p className="reading-text mt-4 max-w-[30rem] text-[#3D4139]">
+              Essays on technology, habits and the choices we make, and news of the books as they come. No fixed schedule—only when there is something worth your time.
+            </p>
           </div>
-          <div className="border-t-2 border-[#f0ce8a] bg-[#542c3c]/55 p-5 sm:p-7 lg:translate-y-10">
+          <div className="min-w-0 flex-[1_1_26rem]">
             <NewsletterForm variant="band" />
-            <p className="mt-4 text-xs leading-relaxed text-[#f1deca]">Occasional emails, confirmed by you, with an unsubscribe link in every one. See the <a href="/newsletter/" className="underline underline-offset-2 hover:text-white">newsletter page</a> and <a href="/privacy/" className="underline underline-offset-2 hover:text-white">privacy notice</a>.</p>
+            <p className="mt-3 text-[0.9rem] leading-[1.5] text-[#5B5F57]">
+              You’ll confirm by email. Unsubscribe any time. See the <a href="/privacy/" className="underline underline-offset-2 hover:text-[#252923]">privacy notice</a>.
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="theme-tech-dark lifeecode-band py-20 text-white lg:py-24" aria-labelledby="lifeecode-title">
-        <div className="container grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-          <div className="flex items-center gap-5">
-            <div className="grid h-24 w-24 shrink-0 place-items-center overflow-hidden rounded-3xl bg-white p-3 shadow-xl shadow-black/15 sm:h-28 sm:w-28">
-              <img src="/media/lifeecode-leaf-circuit-glyph_89bc9786.png" alt="LifeeCode leaf circuit logo" className="h-full w-full object-contain" />
-            </div>
-            <div>
-              <p className="text-[0.66rem] font-bold uppercase tracking-[0.2em] text-[#8ce4dc]">Also from Deveendra</p>
-              <h2 id="lifeecode-title" className="section-heading mt-2">LifeeCode</h2>
-            </div>
+      <section className="band" aria-labelledby="lifeecode-title">
+        <div className="site-frame flex flex-wrap items-center justify-between gap-x-16 gap-y-6 py-12">
+          <div className="min-w-0 flex-[1_1_22rem]">
+            <p className="folio-label text-[#0F6E73]">Also from Deveendra</p>
+            <h2 id="lifeecode-title" className="small-heading mt-2 text-[1.6rem]">LifeeCode</h2>
           </div>
-          <div>
-            <p className="reading-text">LifeeCode explores health technology with an emphasis on evidence, privacy, and practical understanding. Discover weekly briefs, podcasts, and content in English and Hindi.</p>
-            <div className="mt-7 flex flex-wrap items-center gap-5">
-              <a href="/lifeecode/" className="inline-flex items-center gap-2 rounded-[2px] bg-[#14b8a6] px-6 py-3 text-xs font-bold uppercase tracking-[0.15em] text-[#062e2a] transition-all hover:-translate-y-0.5 hover:bg-[#59d3c7] active:scale-[0.97]">Explore LifeeCode <ArrowRight size={16} /></a>
-              <span className="text-xs font-semibold uppercase tracking-[0.14em] text-[#8ce4dc]">Privacy-first · Evidence-based</span>
-            </div>
+          <div className="min-w-0 flex-[2_1_30rem]">
+            <p className="text-[1.1rem] leading-[1.6] text-[#3D4139]">Health technology explained with an emphasis on evidence, privacy, and practical understanding—weekly briefs and podcasts in English and Hindi.</p>
+            <a href="/lifeecode/" className="mt-2 inline-flex items-center py-2 text-[1rem] font-semibold text-[#0F6E73] underline decoration-[#0F6E73]/40 underline-offset-[5px] hover:decoration-[#0F6E73]">Explore LifeeCode</a>
           </div>
         </div>
       </section>

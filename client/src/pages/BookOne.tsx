@@ -30,17 +30,17 @@ export default function BookOne() {
 
   return (
     <SiteLayout>
-      <section className="editorial-grid border-b border-[#302b31]/10 py-18 lg:py-26">
+      <section className="editorial-grid border-b border-[#252923]/10 py-18 lg:py-26">
         <div className="container grid gap-14 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
           <div className="lg:-translate-y-8"><BookMockCover compact /></div>
-          <div className="max-w-3xl lg:translate-y-10">
+          <div className="max-w-3xl ">
             <div className="flex flex-wrap items-center gap-3">
               <p className="section-kicker">A forthcoming book</p>
-              <span className="rounded-[2px] border border-[#302b31]/20 bg-[#fbfbfa] px-3 py-1 text-[0.63rem] font-bold uppercase tracking-[0.17em] text-[#665b53]">Forthcoming</span>
+              <span className="rounded-[2px] border border-[#252923]/20 bg-[#F5F2EC] px-3 py-1 text-[0.63rem] font-bold uppercase tracking-[0.17em] text-[#665b53]">Forthcoming</span>
             </div>
             <h1 className="page-title literary-title mt-7">What Should Remain Mine?</h1>
-            <p className="editorial-quote mt-6 max-w-2xl italic text-[#7e334e]">How to Delegate, Collaborate, and Think for Yourself in the Age of AI</p>
-            <div className="mt-8 max-w-2xl space-y-4 text-lg leading-relaxed text-[#51484b]">
+            <p className="editorial-quote mt-6 max-w-2xl text-[#7E334E]">How to Delegate, Collaborate, and Think for Yourself in the Age of AI</p>
+            <div className="mt-8 max-w-2xl space-y-4 text-lg leading-relaxed text-[#3D4139]">
               <p className="reading-text">AI can increasingly do things that once required our own thinking. But the ability to delegate something does not automatically mean we should.</p>
               <p className="reading-text">What should we hand over? When should we collaborate? And what should we retain because the human work itself matters?</p>
             </div>
@@ -48,7 +48,7 @@ export default function BookOne() {
         </div>
       </section>
 
-      <section className="theme-dark bg-[#302b31] py-24 text-[#fbfbfa] lg:py-30" aria-labelledby="framework-title">
+      <section className="band py-24 text-[#252923] lg:py-30" aria-labelledby="framework-title">
         <div className="container">
           <div className="grid gap-8 border-b border-white/15 pb-12 lg:grid-cols-[1fr_0.7fr] lg:items-end">
             <div>
@@ -60,11 +60,11 @@ export default function BookOne() {
             </p>
           </div>
 
-          <div className="mt-9 border-t border-white/25">
+          <div className="mt-9 border-t border-[#D2CBBD]">
             {modes.map(({ title, text, number }, index) => (
-              <article key={title} className={`grid gap-3 border-b border-white/25 py-9 lg:grid-cols-[7rem_minmax(0,1fr)_minmax(12rem,0.5fr)] lg:items-baseline lg:gap-8 ${index === 1 ? "lg:ml-20" : index === 2 ? "lg:ml-10" : ""}`}>
-                <span className="folio-label text-[#f0ce8a]">{number} / 03</span>
-                <h3 className="row-heading ">{title}<span className="text-[#f0ce8a]">.</span></h3>
+              <article key={title} className={`grid gap-3 border-b border-[#D2CBBD] py-9 lg:grid-cols-[7rem_minmax(0,1fr)_minmax(12rem,0.5fr)] lg:items-baseline lg:gap-8`}>
+                <span className="folio-label text-[#7E334E]">{number} / 03</span>
+                <h3 className="row-heading ">{title}<span className="text-[#7E334E]">.</span></h3>
                 <p className="reading-text max-w-sm">{text}</p>
               </article>
             ))}
@@ -72,7 +72,7 @@ export default function BookOne() {
         </div>
       </section>
 
-      <section className="bg-[#fbfbfa] py-24 lg:py-30">
+      <section className="bg-[#F5F2EC] py-24 lg:py-30">
         <div className="container grid gap-16 lg:grid-cols-2">
           <article>
             <p className="section-kicker">Who the book is for</p>
@@ -81,13 +81,13 @@ export default function BookOne() {
               For readers who want to use AI intelligently without treating either total adoption or total rejection as the answer.
             </p>
           </article>
-          <article className="border-l border-[#302b31]/15 pl-7 sm:pl-12">
+          <article className="border-l border-[#252923]/15 pl-7 sm:pl-12">
             <p className="section-kicker">About the author</p>
             <h2 className="section-heading mt-5">Deveendra Murmu</h2>
             <p className="reading-text mt-6 max-w-xl">
               Deveendra Murmu is a nonfiction author with an engineering background and more than three decades of experience in information technology. His writing explores technology, human behavior, judgment, social influence, and everyday life.
             </p>
-            <a href="/about/" className="mt-8 inline-flex items-center gap-2 border-b border-[#7e334e] pb-1.5 text-xs font-bold uppercase tracking-[0.15em] text-[#7e334e]">
+            <a href="/about/" className="mt-8 inline-flex items-center gap-2 border-b border-[#7E334E] pb-1.5 text-xs font-bold uppercase tracking-[0.15em] text-[#7E334E]">
               More About Deveendra <ArrowRight size={15} />
             </a>
           </article>

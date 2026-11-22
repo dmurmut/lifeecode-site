@@ -10,14 +10,15 @@ import { useId, useRef, useState, type FormEvent } from "react";
 export const KIT_FORM_ACTION = "https://app.kit.com/forms/10221695/subscriptions";
 
 type Props = {
-  /** "page" = labelled two-column layout (newsletter page); "band" = single row (home page). */
+  /** "page" = labelled two-column layout (newsletter page); "band" = compact (home page). */
   variant: "page" | "band";
 };
 
 const inputClass =
-  "min-h-12 w-full rounded-lg border border-white/25 bg-[#fbfbfa] px-4 text-sm text-[#302b31] placeholder:text-[#7e756c] focus:border-[#f0ce8a] focus:outline-none focus:ring-2 focus:ring-[#f0ce8a]/60";
+  "min-h-[50px] w-full border border-[#A8A193] bg-white px-4 text-[1.05rem] text-[#252923] placeholder:text-[#77796f] focus:border-[#7E334E] focus:outline-none focus:ring-2 focus:ring-[#7E334E]/30";
 const buttonClass =
-  "min-h-12 rounded-lg bg-[#302b31] px-6 text-xs font-bold uppercase tracking-[0.15em] text-white transition hover:bg-[#1f1b20] focus:outline-none focus:ring-2 focus:ring-[#f0ce8a]/70 disabled:opacity-60";
+  "min-h-[50px] bg-[#252923] px-6 text-[1rem] font-semibold text-[#F5F2EC] transition-colors hover:bg-[#3a3f37] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7E334E] focus-visible:ring-offset-2 disabled:opacity-60";
+const labelClass = "mb-2 block text-[0.95rem] font-semibold text-[#252923]";
 
 export default function NewsletterForm({ variant }: Props) {
   const id = useId();
@@ -41,45 +42,15 @@ export default function NewsletterForm({ variant }: Props) {
 
   if (state === "done") {
     return (
-      <div role="status" aria-live="polite" className="rounded-lg border border-[#f0ce8a]/60 bg-[#302b31]/40 p-5">
-        <p className="text-xs font-bold uppercase tracking-[0.15em] text-[#f0ce8a]">Almost there</p>
-        <p className="reading-text mt-3">
+      <div role="status" aria-live="polite" className="border border-[#D8D2C6] bg-white p-5">
+        <p className="font-serif text-[1.25rem] font-medium text-[#252923]">Almost there</p>
+        <p className="mt-2 text-[1.05rem] leading-[1.6] text-[#3D4139]">
           Please check your inbox and click the confirmation link to finish subscribing. If it hasn't
           arrived in a few minutes, look in your spam or promotions folder.
         </p>
       </div>
     );
   }
-
-  const firstName =
-    variant === "page" ? (
-      <div>
-        <label className="mb-2 block text-xs font-bold uppercase tracking-[0.13em] text-[#f1deca]" htmlFor={`${id}-first-name`}>
-          First name <span className="font-normal normal-case tracking-normal">(optional)</span>
-        </label>
-        <input id={`${id}-first-name`} name="fields[first_name]" type="text" autoComplete="given-name" placeholder="First name" className={inputClass} />
-      </div>
-    ) : (
-      <>
-        <label className="sr-only" htmlFor={`${id}-first-name`}>First name (optional)</label>
-        <input id={`${id}-first-name`} name="fields[first_name]" type="text" autoComplete="given-name" placeholder="First name" className={inputClass} />
-      </>
-    );
-
-  const email =
-    variant === "page" ? (
-      <div>
-        <label className="mb-2 block text-xs font-bold uppercase tracking-[0.13em] text-[#f1deca]" htmlFor={`${id}-email`}>
-          Email address
-        </label>
-        <input id={`${id}-email`} name="email_address" type="email" required autoComplete="email" placeholder="you@example.com" className={inputClass} />
-      </div>
-    ) : (
-      <>
-        <label className="sr-only" htmlFor={`${id}-email`}>Email address</label>
-        <input id={`${id}-email`} name="email_address" type="email" required autoComplete="email" placeholder="Email address" className={inputClass} />
-      </>
-    );
 
   return (
     <>
@@ -89,22 +60,27 @@ export default function NewsletterForm({ variant }: Props) {
         target={frameName}
         onSubmit={onSubmit}
         aria-label="Newsletter signup"
-        className={variant === "page" ? "grid gap-4" : "grid gap-3 sm:grid-cols-[0.7fr_1.3fr_auto]"}
+        className="grid gap-4"
       >
-        {variant === "page" ? (
-          <div className="grid gap-4 sm:grid-cols-2">
-            {firstName}
-            {email}
+        <div className={variant === "page" ? "grid gap-4 sm:grid-cols-2" : "grid gap-3 sm:grid-cols-[0.8fr_1.2fr]"}>
+          <div>
+            <label className={labelClass} htmlFor={`${id}-first-name`}>
+              First name <span className="font-normal text-[#5B5F57]">(optional)</span>
+            </label>
+            <input id={`${id}-first-name`} name="fields[first_name]" type="text" autoComplete="given-name" className={inputClass} />
           </div>
-        ) : (
-          <>
-            {firstName}
-            {email}
-          </>
-        )}
-        <button type="submit" disabled={state === "sending"} className={buttonClass}>
-          {state === "sending" ? "Sending…" : variant === "page" ? "Join the Newsletter" : "Subscribe"}
-        </button>
+          <div>
+            <label className={labelClass} htmlFor={`${id}-email`}>
+              Email address
+            </label>
+            <input id={`${id}-email`} name="email_address" type="email" required autoComplete="email" placeholder="you@example.com" className={inputClass} />
+          </div>
+        </div>
+        <div>
+          <button type="submit" disabled={state === "sending"} className={buttonClass}>
+            {state === "sending" ? "Sending…" : variant === "page" ? "Join the newsletter" : "Subscribe"}
+          </button>
+        </div>
       </form>
       <iframe name={frameName} title="Newsletter signup response" onLoad={onFrameLoad} className="hidden" aria-hidden="true" tabIndex={-1} />
     </>

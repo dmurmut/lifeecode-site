@@ -8,7 +8,7 @@ export default function AuthorPortrait({ className = "" }: { className?: string 
         width={800}
         height={1000}
         alt="Deveendra Murmu"
-        className="block h-auto w-full rounded-[2px] border border-[#302b31]/10 object-cover"
+        className="block h-auto w-full object-cover"
         decoding="async"
       />
     </picture>

@@ -56,24 +56,24 @@ export default function Privacy() {
 
   return (
     <SiteLayout>
-      <section className="editorial-grid border-b border-[#302b31]/10 py-22 lg:py-30">
+      <section className="editorial-grid border-b border-[#252923]/10 py-22 lg:py-30">
         <div className="container grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
           <div>
             <p className="section-kicker">Privacy notice</p>
             <h1 className="page-title mt-6">Privacy</h1>
           </div>
           <div className="max-w-2xl">
-            <p className="editorial-quote italic text-[#7e334e]">Clear terms should come before data collection, not after it.</p>
+            <p className="editorial-quote text-[#7E334E]">Clear terms should come before data collection, not after it.</p>
             <p className="reading-text mt-6">This page explains, in plain language, what information this website and the author newsletter collect, why, and the choices you have.</p>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#fbfbfa] py-24 lg:py-30">
+      <section className="bg-[#F5F2EC] py-24 lg:py-30">
         <div className="container ruled-list">
           {sections.map((section, index) => (
-            <article key={section.title} className={`grid gap-3 py-10 lg:grid-cols-[5rem_0.75fr_1.25fr] lg:gap-10 ${index % 2 === 1 ? "lg:ml-16" : ""}`}>
-              <span className="folio-label text-[#7e511b]">{String(index + 1).padStart(2, "0")} /</span>
+            <article key={section.title} className={`grid gap-3 py-10 lg:grid-cols-[5rem_0.75fr_1.25fr] lg:gap-10`}>
+              <span className="folio-label text-[#7E334E]">{String(index + 1).padStart(2, "0")} /</span>
               <h2 className="subsection-heading ">{section.title}</h2>
               <p className="reading-text">{section.body}</p>
             </article>
@@ -81,7 +81,7 @@ export default function Privacy() {
         </div>
       </section>
 
-      <section className="border-t border-[#302b31]/10 bg-[#f1f0ed] py-18">
+      <section className="border-t border-[#252923]/10 bg-[#EDE8DF] py-18">
         <div className="container grid gap-7 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <p className="section-kicker">Privacy questions</p>
