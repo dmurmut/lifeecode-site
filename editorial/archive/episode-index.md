@@ -17,7 +17,7 @@
 | 11–19 | Titles pending from the creator | |
 | 20 | क्या आपकी smartwatch आपका high BP पकड़ सकती है? (final title; coverage Nov 1–7, 2026; release Tue 10 Nov 2026 8:00 AM IST) | package ready, awaiting creator review — source re-verification pending (see `verification_log_hi20.md`) — `editorial/episodes/hi20_november_1_7_2026/` |
 | 21 | आपका health data, आपकी permission? — Consent Manager और India का नया data law (final title; coverage Nov 8–14, 2026; release Tue 17 Nov 2026 8:00 AM IST) | package ready, awaiting creator review — source re-verification pending (see `verification_log_hi21.md`) — `editorial/episodes/hi21_november_8_14_2026/` |
-| 22 | पहले AI से पूछते हैं, फिर doctor से? — health सवालों में AI कब काम का, कब खतरनाक (working title; coverage Nov 15–21, 2026; release Tue 24 Nov 2026 8:00 AM IST) | in production — `editorial/episodes/hi22_november_15_21_2026/` |
+| 22 | पहले AI से पूछते हैं, फिर doctor से? — health सवालों में AI कब काम का, कब नहीं (final title; coverage Nov 15–21, 2026; release Tue 24 Nov 2026 8:00 AM IST) | package ready, awaiting creator review — source re-verification pending (see `verification_log_hi22.md`) — `editorial/episodes/hi22_november_15_21_2026/` |
 
 Next episodes: English 25, Hindi 23 (week of 22–28 November 2026).
 
