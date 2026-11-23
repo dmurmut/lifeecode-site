@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /newsletter/
-Disallow: /privacy/
 Sitemap: https://devmmurmu.com/sitemap.xml

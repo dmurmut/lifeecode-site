@@ -1,0 +1,207 @@
+{
+  "issue": 22,
+  "coverage": "November 1 – 7, 2026",
+  "signal": "This week, LifeeCode examines a state settlement over a medical-transcription breach that reached 13.3 million people, a smartwatch study that screened for signs of high blood pressure in a research setting, an FDA discussion paper on autonomous and remotely operated medical robots, a class-certification ruling in the Meta Pixel hospital-tracking lawsuit, and India’s demonstration of an AI scribe that needs a doctor’s approval before anything reaches a patient’s record.",
+  "notice": "LifeeCode is general education. It does not diagnose, treat, or give individual medical advice. Speak to a qualified clinician before making care decisions based on an app, AI tool, wearable, or risk score.",
+  "deepDive": {
+    "title": "The Vendor You Never Met: A Transcription Breach, 13.3 Million Patients, and a Missing Login Check",
+    "privacy": "high",
+    "take": "Your health data is only as safe as the least visible company that handles it — and this week’s settlement shows how ordinary the weak point can be.",
+    "whyItMatters": "Patients choose a hospital or doctor, not the transcription, coding, and billing vendors behind them — yet those vendors can hold diagnoses, test results, medications, and Social Security numbers.",
+    "futuristLens": "As more records pass through vendors and AI note-taking tools, vendor security is likely to be treated as part of patient safety, not an IT detail.",
+    "sections": [
+      {
+        "heading": "What happened",
+        "paragraphs": [
+          "On November 6, Connecticut Attorney General William Tong, with the attorneys general of Michigan and New Jersey, announced a settlement with five Perry Johnson companies: Perry Johnson & Associates (PJ&A), Perry Johnson, Inc. (PJI), PJ&A Coding, PJ&A Radiology, and Medical Transcription and Coding, Inc. [1]. New York’s attorney general also announced the settlement [2]. PJ&A provided coding, billing, and recording services to health-care organizations [1] — the kind of behind-the-scenes work most patients never see and never choose.",
+          "This is a **state enforcement settlement**, not a court finding of liability. According to the attorneys general, in March 2023 hackers used a PJ&A Coding employee’s credentials to get in. PJ&A did not require multi-factor authentication — a second login check, such as a code sent to a phone — when users accessed its systems remotely. The attackers harvested passwords and accessed unencrypted files. PJI’s software recorded the intruders’ activity but was not configured to alert security staff, and the companies learned of the breach only when the hackers contacted them two months later [1].",
+          "The files held names, dates of birth, addresses, Social Security numbers, hospital account numbers, diagnoses, insurance information, and clinical information from transcription files, including lab and diagnostic results and medication names [1]. More than 13.3 million people were affected nationwide, including about 107,960 in Connecticut [1] and about 4.2 million New Yorkers [2].",
+          "The companies pay at least $300,000 now; a further $9.7 million becomes payable only if they fail to meet the settlement’s terms [1]. They must build a comprehensive information-security and incident-response program, use multi-factor authentication, password management, encryption, and asset management, carry out annual risk assessments consistent with HIPAA, and adopt policies for collecting, using, keeping, and disposing of health information [1]."
+        ]
+      },
+      {
+        "heading": "The hidden risk / the opportunity",
+        "paragraphs": [
+          "The hidden risk is distance. A patient picks a hospital or a doctor, not the transcription company that turns dictated notes into records. Yet that vendor may hold the most detailed version of the story: what was found, what was prescribed, and who paid. When a vendor is breached, patients usually hear about it last.",
+          "The failures the attorneys general describe were not exotic. A missing second login check, unencrypted files, and monitoring that recorded an intrusion without telling anyone are basic controls, not cutting-edge defences. That is the uncomfortable lesson: much of health-data protection depends on routine security work at companies far from the clinic.",
+          "The opportunity is that the settlement turns those basics into written obligations, with most of the money held back as an incentive to comply [1]. It also gives patients and health systems a concrete checklist for vendor questions. It does not prove that other transcription vendors share these failures, and it should not be read that way."
+        ]
+      },
+      {
+        "heading": "What you should do",
+        "paragraphs": [
+          "**Read breach letters closely.** If a notice names a company you don’t recognize, it may be a vendor working for your provider. Note what data it says was involved.",
+          "**Protect what can’t be changed.** If your Social Security number was exposed, consider a credit freeze or the free monitoring offered in the notice.",
+          "**Ask your provider one question:** which outside companies handle my records, and do they require multi-factor authentication and encryption?",
+          "**Check your own statements.** Look for unfamiliar services on insurance explanation-of-benefits letters, which can be an early sign of medical identity misuse."
+        ]
+      },
+      {
+        "heading": "The bigger picture",
+        "paragraphs": [
+          "Over the next five to ten years, more health records will pass through vendors — transcription, coding, billing, and now AI note-taking tools. Regulators and health systems are likely to treat vendor security as part of patient safety rather than an IT detail. The question patients will increasingly ask is not only “is my hospital secure?” but “who else is holding my story?”"
+        ]
+      }
+    ],
+    "privacyRating": "The data involved combined permanent identifiers such as Social Security numbers with diagnoses, test results, and medications, held by vendors most patients never knew existed.",
+    "sources": [
+      {
+        "label": "Connecticut Office of the Attorney General — Settlement with Perry Johnson companies, November 6, 2026",
+        "url": "https://portal.ct.gov/ag/press-releases/2026-press-releases/attorney-general-tong-secures-settlement-from-companies-that-failed-to-protect-private-medical-data"
+      },
+      {
+        "label": "FingerLakes1 — 4.2 million New Yorkers affected, November 6, 2026",
+        "url": "https://www.fingerlakes1.com/2026/11/06/medical-data-breach-settlement-requires-reforms-after-4-2-million-new-yorkers-affected/"
+      }
+    ]
+  },
+  "signals": [
+    {
+      "title": "A Smartwatch Study Screened for Signs of High Blood Pressure — in a Research Setting",
+      "privacy": "medium",
+      "paragraphs": [
+        "Google Research, with Beth Israel Deaconess Medical Center and Harvard Medical School, reported on November 5 a peer-reviewed study in Nature of a model called AI-PPG-ACC-HTN, which uses a consumer smartwatch’s optical pulse (PPG) and motion signals, plus height, to flag possible signs of hypertension [3] [4].",
+        "In a prospective study of 196 people at five US sites, checked against 24-hour ambulatory blood-pressure monitoring, the watch model had 65.8% sensitivity and 90.0% specificity, compared with 55.3% sensitivity for an office check [3]. Google calls this **early feasibility research**, not a product feature and not a diagnosis [3]; its existing blood-pressure trends feature is labelled for general wellness and “not a prescreener” for hypertension [5]."
+      ],
+      "whyItMatters": "High blood pressure often has no symptoms, so a passive nudge could one day prompt someone to get a proper cuff reading. Today, no watch result replaces a validated blood-pressure measurement or a conversation with a clinician.",
+      "futuristLens": "Wearables may shift from measuring numbers to flagging when a proper test is worth doing. That only works if the labels stay honest about the difference between a hint and a diagnosis.",
+      "sources": [
+        {
+          "label": "Google Research — Detecting signs of hypertension using wearable sensors",
+          "url": "https://research.google/blog/detecting-signs-of-hypertension-using-wearable-sensors/"
+        }
+      ]
+    },
+    {
+      "title": "FDA Asks How to Judge Robots That Act on Their Own — or Are Steered From Miles Away",
+      "privacy": "low",
+      "paragraphs": [
+        "On November 6, the FDA posted a **discussion paper and request for feedback** on evaluating benefit and risk in robotic medical devices with autonomous or remote-teleoperation capabilities [6]. It covers terminology, benefit-risk questions for autonomy and for teleoperation, and risk mitigations.",
+        "The FDA says the paper is not draft or final guidance; feedback is open through docket FDA-2026-N-13135 until January 5, 2027 [6]."
+      ],
+      "whyItMatters": "If a procedure is ever guided partly by software or by a surgeon in another city, it is reasonable to ask who is in control at each step, and what happens if the connection drops.",
+      "futuristLens": "Remote and semi-autonomous robotics could widen access to specialist care. The rules written in the next few years will decide how accountability, connection security, and human oversight are shared.",
+      "sources": [
+        {
+          "label": "FDA — Robotic Medical Devices with Autonomous or Remote Teleoperation Capabilities: Discussion Paper",
+          "url": "https://www.fda.gov/medical-devices/robotic-medical-devices/evaluating-benefit-risk-robotic-medical-devices-autonomous-or-remote-teleoperation-capabilities"
+        }
+      ]
+    },
+    {
+      "title": "A Judge Lets Facebook Users Sue Meta Together Over Hospital-Website Tracking",
+      "privacy": "high",
+      "paragraphs": [
+        "In an order dated October 30 and reported from November 2, Judge William H. Orrick of the US District Court for the Northern District of California certified four classes of Facebook users in the Meta Pixel healthcare litigation [7] [8] [9]. Plaintiffs allege that a tracking tool installed by more than 660 hospital systems and providers sent health information — such as patient-status clicks, conditions, doctors, and prescriptions — to Meta without consent [7].",
+        "This is a **class-certification ruling**: the court has not decided whether Meta broke any law, and Meta plans to appeal [7]. The order itself is dated two days before this week’s coverage window; the public reporting fell inside it."
+      ],
+      "whyItMatters": "Searching a hospital website for a condition or booking an appointment can feel private. This case asks whether it was.",
+      "futuristLens": "Tracking tools on health websites are becoming a legal and governance issue, not just a marketing decision. Expect more scrutiny of what loads on patient-facing pages.",
+      "sources": [
+        {
+          "label": "HIPAA Journal — Judge Certifies Classes in Meta Healthcare Data Privacy Litigation",
+          "url": "https://www.hipaajournal.com/judge-certifies-classes-meta-healthcare-data-privacy-litigation/"
+        }
+      ]
+    },
+    {
+      "title": "India Demonstrates an AI Scribe That Must Wait for a Doctor’s Approval",
+      "privacy": "medium",
+      "paragraphs": [
+        "At its National Review Meeting in Kolkata on November 5–6, India’s National Health Authority demonstrated an Ambient AI Voice Scribe that turns doctor–patient conversations into structured records in multiple Indian languages; the records are reviewed and approved by doctors before being linked to a patient’s ABHA (Ayushman Bharat Health Account) [10] [11].",
+        "States were encouraged to use BODH-based AI benchmarking in procurement and advised to designate dedicated cybersecurity leads and run regular audits of applications and APIs [10]. These were **demonstrations and recommendations**; no rollout dates or accuracy data were published."
+      ],
+      "whyItMatters": "An AI note-taker can save time, but a mistaken note in your record can follow you. A required human sign-off is a meaningful safeguard to look for.",
+      "futuristLens": "National digital-health systems are starting to build human review, benchmarking, and security leads into AI adoption from the start. India’s network already links more than 104 crore (1.04 billion) health records to ABHA accounts, shared on patient consent [12].",
+      "sources": [
+        {
+          "label": "ANI — Health Ministry reviews AB PM-JAY, ABDM with states",
+          "url": "https://aninews.in/news/national/general-news/health-ministry-reviews-ab-pm-jay-abdm-with-states-charts-roadmap-for-stronger-implementation20261106193908/"
+        }
+      ]
+    }
+  ],
+  "radar": [
+    {
+      "story": "Perry Johnson transcription breach",
+      "privacy": "high",
+      "data": "Hospitals and clinics, plus transcription, coding, and billing vendors they hire",
+      "action": "Read breach notices; consider a credit freeze; ask your provider which vendors handle your records."
+    },
+    {
+      "story": "Smartwatch blood-pressure research",
+      "privacy": "medium",
+      "data": "Watch maker, its health app and cloud, and research teams with consenting participants",
+      "action": "Treat watch alerts as a prompt for a proper cuff reading; review health-app sharing settings."
+    },
+    {
+      "story": "FDA robotics discussion paper",
+      "privacy": "low",
+      "data": "Device makers, hospitals, and the networks that carry teleoperation signals",
+      "action": "Before a robot-assisted procedure, ask who controls each step and what happens if the connection fails."
+    },
+    {
+      "story": "Meta Pixel class certification",
+      "privacy": "high",
+      "data": "Health-provider websites and any third-party trackers loaded on them",
+      "action": "Use browser tracking protection on health sites; use the patient portal or phone for sensitive bookings."
+    },
+    {
+      "story": "India’s AI voice scribe",
+      "privacy": "medium",
+      "data": "Treating doctor, the facility’s software, and India’s ABDM network (consent-based)",
+      "action": "Ask whether AI was used to write your notes, and review your record for errors."
+    }
+  ],
+  "globalWatchNote": "No standalone Global Watch story this week: the strongest international, in-window signal — India’s doctor-approved AI scribe — is carried as a main story, and other international candidates fell outside the coverage window.",
+  "references": [
+    {
+      "label": "Connecticut Office of the Attorney General — Attorney General Tong Secures Settlement from Companies That Failed to Protect Private Medical Data (Nov 6, 2026)",
+      "url": "https://portal.ct.gov/ag/press-releases/2026-press-releases/attorney-general-tong-secures-settlement-from-companies-that-failed-to-protect-private-medical-data"
+    },
+    {
+      "label": "FingerLakes1 — Medical data breach settlement requires reforms after 4.2 million New Yorkers affected (Nov 6, 2026)",
+      "url": "https://www.fingerlakes1.com/2026/11/06/medical-data-breach-settlement-requires-reforms-after-4-2-million-new-yorkers-affected/"
+    },
+    {
+      "label": "Google Research — Detecting signs of hypertension using wearable sensors (Nov 5, 2026)",
+      "url": "https://research.google/blog/detecting-signs-of-hypertension-using-wearable-sensors/"
+    },
+    {
+      "label": "Nature — Opportunistically Detecting Signs of Hypertension on a Consumer Smartwatch",
+      "url": "https://www.nature.com/articles/s41586-026-11336-3"
+    },
+    {
+      "label": "Google — Our new health and safety tools are live in the Google Health app (Sep 24, 2026)",
+      "url": "https://blog.google/products-and-platforms/products/google-health/health-guardian-features-live/"
+    },
+    {
+      "label": "FDA — Evaluating Benefit-Risk in Robotic Medical Devices with Autonomous or Remote Teleoperation Capabilities: Discussion Paper and Request for Feedback (Nov 6, 2026)",
+      "url": "https://www.fda.gov/medical-devices/robotic-medical-devices/evaluating-benefit-risk-robotic-medical-devices-autonomous-or-remote-teleoperation-capabilities"
+    },
+    {
+      "label": "HIPAA Journal — Judge Certifies Classes in Meta Platforms Healthcare Data Privacy Litigation (Nov 6, 2026)",
+      "url": "https://www.hipaajournal.com/judge-certifies-classes-meta-healthcare-data-privacy-litigation/"
+    },
+    {
+      "label": "Cohen Milstein — Meta Users Win Class Cert in Pixel Healthcare Data Suit (Nov 2, 2026)",
+      "url": "https://www.cohenmilstein.com/meta-users-win-class-cert-in-pixel-healthcare-data-suit/"
+    },
+    {
+      "label": "Daily Journal — Judge certifies 4 classes in Meta health data privacy lawsuit (Nov 3, 2026)",
+      "url": "https://dailyjournal.com/article/395827-judge-certifies-4-classes-in-meta-health-data-privacy-lawsuit"
+    },
+    {
+      "label": "ANI — Health Ministry reviews AB PM-JAY, ABDM with states; charts roadmap for stronger implementation (Nov 6, 2026)",
+      "url": "https://aninews.in/news/national/general-news/health-ministry-reviews-ab-pm-jay-abdm-with-states-charts-roadmap-for-stronger-implementation20261106193908/"
+    },
+    {
+      "label": "Digital Health News — Tripura Showcases Digital Healthcare Model at National ABDM, AB-PMJAY Review Meeting (Nov 6, 2026)",
+      "url": "https://www.digitalhealthnews.com/tripura-showcases-digital-healthcare-model-at-national-abdm-ab-pmjay-review-meeting"
+    },
+    {
+      "label": "Press Information Bureau — Backgrounder: Ayushman Bharat Digital Mission (Jul 6, 2026)",
+      "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2281466&reg=3&lang=1"
+    }
+  ]
+}

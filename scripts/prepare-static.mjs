@@ -65,6 +65,90 @@ const escape = s =>
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;");
 const canonical = p => `https://${site.productionHost}${p}`;
+
+// Social share image per section (1200x630, in client/public/media).
+function shareImage(entryPath) {
+  if (entryPath.startsWith("/books/"))
+    return {
+      src: "/media/share-book.jpg",
+      alt: "What Should Remain Mine? by Deveendra Murmu — book cover",
+    };
+  if (entryPath.startsWith("/lifeecode/"))
+    return {
+      src: "/media/share-lifeecode.jpg",
+      alt: "LifeeCode — privacy-first, evidence-based health technology",
+    };
+  return {
+    src: "/media/share-author.jpg",
+    alt: "Deveendra Murmu, nonfiction author",
+  };
+}
+
+const PERSON = {
+  "@type": "Person",
+  "@id": `https://${site.productionHost}/#person`,
+  name: "Deveendra Murmu",
+  url: `https://${site.productionHost}/`,
+  image: `https://${site.productionHost}/media/deveendra-murmu.jpg`,
+  jobTitle: "Nonfiction author",
+  description:
+    "Nonfiction author with an engineering background and more than three decades of experience in information technology.",
+  sameAs: [
+    "https://www.linkedin.com/in/deveendramurmu/",
+    "https://x.com/DeveendraMurmu",
+    "https://www.youtube.com/@LifeeCode",
+  ],
+};
+
+// Structured data (schema.org JSON-LD) for the pages where it helps search results.
+function structuredData(entryPath) {
+  const host = `https://${site.productionHost}`;
+  if (entryPath === "/")
+    return [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": `${host}/#website`,
+        url: `${host}/`,
+        name: "Deveendra Murmu",
+        publisher: { "@id": `${host}/#person` },
+      },
+      { "@context": "https://schema.org", ...PERSON },
+    ];
+  if (entryPath === "/about/")
+    return [
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        url: `${host}/about/`,
+        mainEntity: PERSON,
+      },
+    ];
+  if (entryPath === "/books/what-should-remain-mine/")
+    return [
+      {
+        "@context": "https://schema.org",
+        "@type": "Book",
+        name: "What Should Remain Mine?",
+        alternativeHeadline:
+          "How to Delegate, Collaborate, and Think for Yourself in the Age of AI",
+        author: { "@id": `${host}/#person`, "@type": "Person", name: "Deveendra Murmu" },
+        image: `${host}/media/wsrm-cover.jpg`,
+        url: `${host}/books/what-should-remain-mine/`,
+        datePublished: "2027-02-02",
+        inLanguage: "en",
+        bookFormat: ["https://schema.org/Paperback", "https://schema.org/EBook"],
+      },
+    ];
+  return [];
+}
+const jsonLd = data =>
+  data
+    .map(
+      d =>
+        `<script type="application/ld+json">${JSON.stringify(d).replaceAll("<", "\\u003c")}</script>`
+    )
+    .join("\n");
 try {
   async function emit(entry, markup, dest) {
     let html = template
@@ -86,7 +170,7 @@ try {
     const url = canonical(entry.path);
     html = html.replace(
       "</head>",
-      `<link rel="canonical" href="${url}" />\n<meta name="robots" content="${robots}" />\n<meta property="og:title" content="${escape(entry.title)}" />\n<meta property="og:description" content="${escape(entry.description)}" />\n<meta property="og:url" content="${url}" />\n<meta property="og:type" content="${entry.article ? "article" : "website"}" />\n<meta name="twitter:card" content="summary" />\n</head>`
+      `<link rel="canonical" href="${url}" />\n<meta name="robots" content="${robots}" />\n<meta property="og:title" content="${escape(entry.title)}" />\n<meta property="og:description" content="${escape(entry.description)}" />\n<meta property="og:url" content="${url}" />\n<meta property="og:type" content="${entry.article ? "article" : "website"}" />\n<meta property="og:site_name" content="Deveendra Murmu" />\n<meta property="og:image" content="${canonical(shareImage(entry.path).src)}" />\n<meta property="og:image:width" content="1200" />\n<meta property="og:image:height" content="630" />\n<meta property="og:image:alt" content="${escape(shareImage(entry.path).alt)}" />\n<meta name="twitter:card" content="summary_large_image" />\n<meta name="twitter:site" content="@DeveendraMurmu" />\n<meta name="twitter:image" content="${canonical(shareImage(entry.path).src)}" />\n${jsonLd(structuredData(entry.path))}\n</head>`
     );
     html = html.replace(
       '<div id="root"></div>',
@@ -128,7 +212,7 @@ try {
   await writeFile(path.join(out, "sitemap.xml"), sitemap);
   await writeFile(path.join(root, "client/public/sitemap.xml"), sitemap);
   const robots = site.indexingEnabled
-    ? `User-agent: *\nAllow: /\nDisallow: /newsletter/\nDisallow: /privacy/\nSitemap: ${canonical("/sitemap.xml")}\n`
+    ? `User-agent: *\nAllow: /\n${site.draftPaths.map(p => `Disallow: ${p}\n`).join("")}Sitemap: ${canonical("/sitemap.xml")}\n`
     : "User-agent: *\nDisallow: /\n";
   await writeFile(path.join(out, "robots.txt"), robots);
   await writeFile(path.join(root, "client/public/robots.txt"), robots);

@@ -9,7 +9,7 @@ export default function NotFound() {
     <SiteLayout>
       <section className="editorial-grid min-h-[70vh] py-24 lg:py-32">
         <div className="container grid gap-10 lg:grid-cols-[0.45fr_1.55fr]">
-          <p className="editorial-quote italic text-[#7e511b]">404</p>
+          <p className="editorial-quote text-[#7E334E]">404</p>
           <div className="max-w-3xl">
             <p className="section-kicker">Page not found</p>
             <h1 className="page-title mt-6">This path does not lead to a published page.</h1>

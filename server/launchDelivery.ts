@@ -74,7 +74,7 @@ export function registerLaunchDelivery(
           /<meta name="robots" content="[^"]*"\s*\/?\s*>/,
           '<meta name="robots" content="noindex, nofollow" />'
         );
-      if (site.draftPaths.includes(canonical))
+      if ((site.draftPaths as string[]).includes(canonical))
         res.setHeader("X-Robots-Tag", "noindex, nofollow");
       res.setHeader("Cache-Control", "no-cache");
       res.type("html").send(html);

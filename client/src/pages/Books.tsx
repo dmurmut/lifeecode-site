@@ -35,14 +35,14 @@ export default function Books() {
 
   return (
     <SiteLayout>
-      <section className="editorial-grid border-b border-[#302b31]/10 py-22 sm:py-28 lg:py-32">
+      <section className="editorial-grid border-b border-[#252923]/10 py-22 sm:py-28 lg:py-32">
         <div className="container grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
           <div>
             <p className="section-kicker">Books by Deveendra Murmu</p>
             <h1 className="page-title literary-title mt-6">Books</h1>
           </div>
           <div className="max-w-xl lg:justify-self-end">
-            <p className="editorial-quote italic text-[#7e334e]">Different questions. A shared curiosity.</p>
+            <p className="editorial-quote text-[#7E334E]">Different questions. A shared curiosity.</p>
             <p className="reading-text mt-4">
               Each book stands on its own. Together, they explore how we can better understand the influences around us and participate more deliberately in the lives we build.
             </p>
@@ -50,40 +50,40 @@ export default function Books() {
         </div>
       </section>
 
-      <section className="theme-dark bg-[#302b31] py-24 text-[#fbfbfa] lg:py-30" aria-labelledby="book-one-title">
+      <section className="band py-24 text-[#252923] lg:py-30" aria-labelledby="book-one-title">
         <div className="container grid gap-16 lg:grid-cols-[0.78fr_1.22fr] lg:items-center">
           <BookMockCover />
           <article className="max-w-3xl">
             <p className="section-kicker section-kicker-light">Featured · Book one</p>
-            <span className="mt-5 inline-block rounded-[2px] border border-[#dbb777]/40 bg-[#dbb777]/10 px-3 py-1 text-[0.67rem] font-bold uppercase tracking-[0.18em] text-[#f0ce8a]">Forthcoming</span>
+            <span className="mt-5 inline-block rounded-[2px] border border-[#7E334E]/40 bg-[#7E334E]/10 px-3 py-1 text-[0.67rem] font-bold uppercase tracking-[0.18em] text-[#7E334E]">Forthcoming</span>
             <h2 id="book-one-title" className="section-heading mt-6">What Should Remain Mine?</h2>
-            <p className="editorial-quote mt-5 max-w-2xl italic text-[#e0cfb8]">How to Delegate, Collaborate, and Think for Yourself in the Age of AI</p>
-            <div className="mt-8 space-y-5 text-[1.02rem] leading-relaxed text-[#e2d5c3]">
+            <p className="editorial-quote mt-5 max-w-2xl text-[#5B5F57]">How to Delegate, Collaborate, and Think for Yourself in the Age of AI</p>
+            <div className="mt-8 space-y-5 text-[1.02rem] leading-relaxed text-[#3D4139]">
               <p className="reading-text">As AI becomes increasingly capable, the question is no longer simply what it can do for us. It is what role we want to give it.</p>
               <p className="reading-text">This book introduces three ways of approaching AI—Delegate, Collaborate, and Retain—to help readers decide when to hand over a task, when to think alongside technology, and when the human work itself matters.</p>
               <p className="reading-text">It is neither a rejection of AI nor an invitation to use it for everything. It is an exploration of how to use powerful tools without losing sight of our own judgment, capabilities, relationships, and responsibility.</p>
             </div>
-            <a href="/books/what-should-remain-mine/" className="mt-9 inline-flex items-center gap-2 border-b border-[#dbb777] pb-1.5 text-sm font-bold uppercase tracking-[0.15em] text-[#f0ce8a] hover:text-white">
+            <a href="/books/what-should-remain-mine/" className="mt-9 inline-flex items-center gap-2 border-b border-[#7E334E] pb-1.5 text-sm font-bold uppercase tracking-[0.15em] text-[#7E334E] hover:text-[#252923]">
               Learn More <ArrowRight size={16} />
             </a>
           </article>
         </div>
       </section>
 
-      <section className="bg-[#fbfbfa] py-24 lg:py-30">
+      <section className="bg-[#F5F2EC] py-24 lg:py-30">
         <div className="container">
-          <div className="border-b border-[#302b31]/15 pb-8">
+          <div className="border-b border-[#252923]/15 pb-8">
             <p className="section-kicker">Two more questions</p>
             <h2 className="section-heading mt-4 max-w-3xl">Independent works in a larger conversation.</h2>
           </div>
 
           <div className="ruled-list mt-12">
             {laterBooks.map((book, index) => (
-              <article key={book.number} className={`grid gap-8 py-14 lg:grid-cols-[0.87fr_1.13fr] lg:gap-20 ${index === 1 ? "lg:ml-20" : ""}`}>
+              <article key={book.number} className={`grid gap-8 py-14 lg:grid-cols-[0.87fr_1.13fr] lg:gap-20`}>
                 <div>
-                  <span className="folio-label text-[#7e511b]">{book.number} / forthcoming</span>
+                  <span className="folio-label text-[#7E334E]">{book.number} / forthcoming</span>
                   <h3 className="row-heading row-heading-large mt-6 max-w-lg">{book.title}</h3>
-                  <p className="editorial-quote mt-6 max-w-md italic text-[#7e334e]">{book.subtitle}</p>
+                  <p className="editorial-quote mt-6 max-w-md text-[#7E334E]">{book.subtitle}</p>
                 </div>
                 <div className="max-w-xl space-y-5 text-lg leading-relaxed text-[#665b53] lg:pt-16">
                   {book.paragraphs.map((paragraph) => <p key={paragraph} className="reading-text">{paragraph}</p>)}
@@ -94,7 +94,7 @@ export default function Books() {
         </div>
       </section>
 
-      <section className="border-y border-[#302b31]/10 bg-[#f1f0ed] py-22 lg:py-28">
+      <section className="border-y border-[#252923]/10 bg-[#EDE8DF] py-22 lg:py-28">
         <div className="container grid gap-10 lg:grid-cols-[0.6fr_1.4fr]">
           <p className="section-kicker">The larger conversation</p>
           <div>
