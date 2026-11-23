@@ -184,3 +184,11 @@ Editorial reason for the brief: *"No standalone Global Watch this week: the stro
 **Sources that could not be opened this run:** Federal Register rule text (2026-23429); Frontiers article page; npj Digital Medicine article page; CISA ICS advisories page; FDA "Super Intelligence" page; healthit.gov TEFCA blog post; Bloomberg Law / MLex full text (Wisp ruling); Google Gemini help page; California AG breach page. None is relied on for a claim beyond what is marked.
 
 Research method note: candidate discovery used parallel research passes (US regulation; peer-reviewed studies; privacy/breaches; international/India), each opening source pages; key primary pages (S1, S2, S6, S7, S8, PwC India) were then re-opened in an independent verification pass.
+
+## 10. Run C production note (Monday 23 November 2026)
+
+- **Re-verification attempted, not completed.** Run C tried to re-open S1, S2, the Federal Register rule text (2026-23429), S6, S7, S8, S9, S10 and the Frontiers article. Every page fetch was refused in this unattended run (permission prompt not answered), so no source was re-opened. A web search confirmed that S9, S10 and a News-Medical report (17 Nov 2026) about the wearables study exist, but search snippets were not used for any claim.
+- **What the package therefore relies on:** Run A's reads, using only facts Run A marked as verified. In line with Run A's instruction, the raw sign-off rates (89.7% vs 67.1%), omission rates and hallucination rates for the discharge-summary study were **left out** of every public deliverable because they had been read only once; the brief uses the abstract figures that were confirmed twice (adjusted difference 22.2 points, harm ratings).
+- **Attributed, not stated as HHS's words:** effective/compliance dates (Nixon Peabody, GovInfoSecurity, consistent with HHS's day counts) and the limit on refusing apps on security grounds (GovInfoSecurity).
+- **Global Watch:** omitted as Run A recommended; `globalWatchNote` used in the JSON.
+- **Episode numbering:** Episode 22 was merged and published on 22 November, so numbering 24 stands; `main` was merged into this branch.
