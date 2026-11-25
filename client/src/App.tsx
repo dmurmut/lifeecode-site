@@ -5,6 +5,8 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import About from "./pages/About";
 import BookOne from "./pages/BookOne";
+import EssayPage from "./pages/EssayPage";
+import Essays from "./pages/Essays";
 import Books from "./pages/Books";
 import Home from "./pages/Home";
 import LifeeCodeLanding from "./pages/LifeeCodeLanding";
@@ -23,6 +25,10 @@ function Router() {
       <Route path="/books/what-should-remain-mine" component={BookOne} />
       <Route path="/books/" component={Books} />
       <Route path="/books" component={Books} />
+      <Route path="/essays/" component={Essays} />
+      <Route path="/essays" component={Essays} />
+      <Route path="/essays/:slug/" component={EssayPage} />
+      <Route path="/essays/:slug" component={EssayPage} />
       <Route path="/about/" component={About} />
       <Route path="/about" component={About} />
       <Route path="/newsletter/" component={Newsletter} />

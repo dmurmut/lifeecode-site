@@ -150,6 +150,36 @@
     max-width: 40rem;
     overflow-wrap: break-word;
   }
+  /* Essays: one reading column, the writing is the focus. */
+  .essay-title {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: clamp(2.15rem, 1.7rem + 1.8vw, 3.1rem);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    overflow-wrap: break-word;
+  }
+  .essay-body p {
+    font-family: var(--font-sans);
+    font-size: 1.1875rem;
+    line-height: 1.7;
+    color: #252923;
+    overflow-wrap: break-word;
+  }
+  .essay-body p + p { margin-top: 1.35rem; }
+  .essay-body h2 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: clamp(1.45rem, 1.3rem + 0.5vw, 1.75rem);
+    line-height: 1.25;
+    text-wrap: pretty;
+    margin-top: 3.25rem;
+    margin-bottom: 1.1rem;
+  }
+  @media (max-width: 639px) {
+    .essay-body p { font-size: 1.125rem; }
+  }
   .compact-text { font-size: 1rem; line-height: 1.55; color: #3D4139; }
   .brief-reading-text, .page-tech-brief .reading-text {
     font-family: var(--font-sans);

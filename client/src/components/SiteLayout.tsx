@@ -5,6 +5,7 @@ import { useLocation } from "wouter";
 const navigation = [
   { label: "Home", href: "/" },
   { label: "Books", href: "/books/" },
+  { label: "Essays", href: "/essays/" },
   { label: "About", href: "/about/" },
   { label: "LifeeCode", href: "/lifeecode/" },
 ];
@@ -103,6 +104,7 @@ export function Footer() {
         </div>
         <nav className="flex flex-wrap gap-x-7 gap-y-2 text-[0.95rem]" aria-label="Footer navigation">
           <a href="/books/" className="hover:text-[#252923]">Books</a>
+          <a href="/essays/" className="hover:text-[#252923]">Essays</a>
           <a href="/about/" className="hover:text-[#252923]">About</a>
           <a href="/newsletter/" className="hover:text-[#252923]">Newsletter</a>
           <a href="/lifeecode/" className="hover:text-[#252923]">LifeeCode</a>

@@ -5,6 +5,8 @@ type PageMetaOptions = {
   canonicalPath?: string;
   noindex?: boolean;
   article?: boolean;
+  /** Title for social previews when it should differ from the document title. */
+  ogTitle?: string;
 };
 const productionHost = siteConfig.productionHost;
 
@@ -13,7 +15,7 @@ export function usePageMeta(
   description: string,
   options: PageMetaOptions = {}
 ) {
-  const { canonicalPath, noindex = false, article = false } = options;
+  const { canonicalPath, noindex = false, article = false, ogTitle } = options;
   useEffect(() => {
     document.title = title;
     const setMeta = (key: string, value: string, property = false) => {
@@ -42,7 +44,7 @@ export function usePageMeta(
     }
     link.href = canonical;
     setMeta("description", description);
-    setMeta("og:title", title, true);
+    setMeta("og:title", ogTitle ?? title, true);
     setMeta("og:description", description, true);
     setMeta("og:url", canonical, true);
     setMeta("og:type", article ? "article" : "website", true);
@@ -58,5 +60,5 @@ export function usePageMeta(
         ? "noindex, nofollow"
         : "index, follow"
     );
-  }, [title, description, canonicalPath, noindex, article]);
+  }, [title, description, canonicalPath, noindex, article, ogTitle]);
 }

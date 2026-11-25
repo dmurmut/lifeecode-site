@@ -3,6 +3,7 @@ import NewsletterForm from "@/components/NewsletterForm";
 import BookMockCover from "@/components/BookMockCover";
 import SiteLayout from "@/components/SiteLayout";
 import { usePageMeta } from "@/hooks/usePageMeta";
+import { essayPath, essays, formatDate, readingMinutes } from "@/content/essays";
 
 const themes = [
   ["01", "Technology", "What should we delegate, and what should remain ours?"],
@@ -22,6 +23,8 @@ const booksInProgress = [
     question: "How do other people’s expectations become part of what we want—and which voices deserve influence?",
   },
 ];
+
+const latestEssay = essays[0];
 
 export default function Home() {
   usePageMeta(
@@ -79,6 +82,33 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {latestEssay && (
+        <>
+          <div className="site-frame"><hr className="border-0 border-t border-[#D8D2C6]" /></div>
+          <section aria-labelledby="latest-essay-title">
+            <div className="site-frame flex flex-wrap items-start gap-x-22 gap-y-6 py-18 lg:py-20">
+              <div className="min-w-0 flex-[1_1_16rem]">
+                <h2 id="latest-essay-title" className="subsection-heading">Latest essay</h2>
+                <a className="text-link mt-3" href="/essays/">All essays</a>
+              </div>
+              <article className="min-w-0 flex-[3_1_30rem]">
+                <p className="folio-label text-[#7E334E]">{latestEssay.category}</p>
+                <h3 className="row-heading mt-2.5 max-w-[42rem]">
+                  <a href={essayPath(latestEssay)} className="hover:underline hover:decoration-[#7E334E]/50 hover:underline-offset-[6px]">{latestEssay.title}</a>
+                </h3>
+                <p className="mt-3.5 max-w-[40rem] text-[1.15rem] leading-[1.6] text-[#3D4139]">{latestEssay.excerpt}</p>
+                <p className="mt-3 text-[0.95rem] text-[#5B5F57]">
+                  <time dateTime={latestEssay.datePublished}>{formatDate(latestEssay.datePublished)}</time>
+                  <span aria-hidden="true" className="mx-2">·</span>
+                  {readingMinutes(latestEssay)} min read
+                </p>
+                <a className="text-link mt-2" href={essayPath(latestEssay)} aria-label={`Read the essay: ${latestEssay.title}`}>Read the essay</a>
+              </article>
+            </div>
+          </section>
+        </>
+      )}
 
       <section className="band" aria-labelledby="in-progress-title">
         <div className="site-frame py-18 lg:py-20">
